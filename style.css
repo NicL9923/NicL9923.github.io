@@ -7,7 +7,7 @@ header {
 }
 
 body {
-	background-color: lightskyblue;
+	background-color: grey;
 	margin: 0;
 	position: relative;
 	padding-bottom: 125px;
@@ -15,7 +15,7 @@ body {
 
 footer {
 	text-align: center;
-	background-color: black;
+	background-color: red;
 	color: white;
 	position: absolute;
 	bottom: 0;
@@ -28,7 +28,7 @@ footer {
 	margin: 0;
 	padding: 0;
 	overflow: hidden;
-	background-color: black;
+	background-color: red;
 	text-align: center;
 	position: relative;
 }
@@ -45,11 +45,11 @@ li a {
 }
 
 li a:hover {
-	background-color: #111;
+	background-color: darkred;
 }
 
 .active {
-	background-color: teal;
+	background-color: black;
 }
 
 .gridWrapper {
@@ -60,7 +60,7 @@ li a:hover {
 .homeHeader {
 	text-align: center;
 	padding: 30px;
-	background-color: cyan;
+	background-color: red;
 }
 
 .navImg {
