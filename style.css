@@ -52,9 +52,8 @@ li a:hover {
 	background-color: black;
 }
 
-.gridWrapper {
-	display: grid;
-	grid-template-columns: 20% 80%;
+.aboutMeWrapper {
+
 }
 
 .homeHeader {
@@ -85,4 +84,16 @@ li a:hover {
 	float: right;
 	display: block;
 	padding: 6px 7px;
+}
+
+#headerText {
+
+}
+
+#headerDate {
+
+}
+
+#headerTime {
+
 }
