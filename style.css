@@ -48,6 +48,52 @@ li a:hover {
 	background-color: darkred;
 }
 
+form {
+	display: flex;
+	flex-direction: column;
+}
+
+input[type=text], input[type=email] {
+	box-sizing: border-box;
+	margin: 10px;
+	padding: 10px;
+	border-radius: 4px;
+	width: 400px;
+}
+
+input[type=text]:focus, input[type=email]:focus {
+	border: 2px solid darkred;
+}
+
+input[type=submit] {
+	box-sizing: border-box;
+	margin: 10px;
+	padding: 10px;
+	border-radius: 4px;
+	width: 200px;
+	cursor: pointer;
+	background-color: red;
+	border: 3px solid darkred;
+	color: white;
+	font-size: 18px;
+}
+
+textarea {
+	resize: vertical;
+	height: 300px;
+	width: 600px;
+	box-sizing: border-box;
+	margin: 10px;
+	margin-top: 0px;
+	padding: 10px;
+	border-radius: 4px;
+
+}
+
+textarea:focus {
+	border: 2px solid darkred;
+}
+
 .active {
 	background-color: black;
 }
@@ -60,6 +106,37 @@ li a:hover {
 	text-align: center;
 	padding: 30px;
 	background-color: red;
+	border: 3px solid darkred;
+	color: white;
+	text-shadow: 6px 6px 5px darkred;
+	margin: 15px 300px;
+}
+
+.homePara {
+	width: 50%;
+	font-size: 16px;
+	text-align: center;
+	margin: 0 auto;
+}
+
+.projectsHeader {
+	text-align: center;
+	padding: 30px;
+	background-color: red;
+	border: 3px solid darkred;
+	color: white;
+	text-shadow: 6px 6px 5px darkred;
+	margin: 15px 300px;
+}
+
+.contactMeHeader {
+	text-align: center;
+	padding: 30px;
+	background-color: red;
+	border: 3px solid darkred;
+	color: white;
+	text-shadow: 6px 6px 5px darkred;
+	margin: 15px 300px;
 }
 
 .navImg {
@@ -68,6 +145,26 @@ li a:hover {
 
 .navImg:hover {
 	background: rgba(128, 128, 128, 0.288);
+}
+
+.headerBox {
+	background-color: black;
+	width: 100%;
+	height: 300px;
+	display: flex;
+}
+
+.projectBoxesContainer {
+	display: flex;
+}
+
+.projectBox {
+	height: 400px;
+	width: 400px;
+	padding: 35px;
+	margin: 35px auto;
+	background-color: red;
+	box-shadow: 4px 4px 4px black;
 }
 
 #nameShowcase {
@@ -87,13 +184,30 @@ li a:hover {
 }
 
 #headerText {
+	color: white;
+	font-size: 48px;
+	text-shadow: 2px 2px 6px darkgray;
+	margin: auto auto;
+}
+
+#dateTime {
+	text-align: center;
+	color: white;
+	font-size: 24px;
+	margin: auto auto;
+}
+
+#contactFormDiv {
+	display: block;
+	text-align: center;
+	width: 100%;
 
 }
 
-#headerDate {
-
-}
-
-#headerTime {
-
+#contactForm {
+	display: inline-block;
+	margin: 10px auto;
+	text-align: left;
+	background-color: darkgrey;
+	padding: 20px;
 }
