@@ -98,10 +98,6 @@ textarea:focus {
 	background-color: black;
 }
 
-.aboutMeWrapper {
-
-}
-
 .homeHeader {
 	text-align: center;
 	padding: 30px;
@@ -141,10 +137,6 @@ textarea:focus {
 
 .navImg {
 	padding: 6px;
-}
-
-.navImg:hover {
-	background: rgba(128, 128, 128, 0.288);
 }
 
 .headerBox {
@@ -205,7 +197,7 @@ textarea:focus {
 }
 
 #contactForm {
-	display: inline-block;
+	display: inline-flex;
 	margin: 10px auto;
 	text-align: left;
 	background-color: darkgrey;
