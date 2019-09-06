@@ -28,7 +28,7 @@ footer {
 	margin: 0;
 	padding: 0;
 	overflow: hidden;
-	background-color: red;
+	background-color: #c23b22;
 	text-align: center;
 	position: relative;
 }
@@ -78,6 +78,11 @@ input[type=submit] {
 	font-size: 18px;
 }
 
+input[type=submit]:hover {
+	background-color: lightcoral;
+	border: 3px solid red;
+}
+
 textarea {
 	resize: vertical;
 	height: 300px;
@@ -105,7 +110,7 @@ textarea:focus {
 	border: 3px solid darkred;
 	color: white;
 	text-shadow: 6px 6px 5px darkred;
-	margin: 15px 300px;
+	margin: 15px 500px;
 }
 
 .homePara {
