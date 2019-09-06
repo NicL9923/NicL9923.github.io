@@ -7,7 +7,7 @@ header {
 }
 
 body {
-	background-color: grey;
+	background-color: #d4d4d4;
 	margin: 0;
 	position: relative;
 	padding-bottom: 125px;
@@ -15,7 +15,7 @@ body {
 
 footer {
 	text-align: center;
-	background-color: red;
+	background-color: #c23b22;
 	color: white;
 	position: absolute;
 	bottom: 0;
@@ -72,15 +72,15 @@ input[type=submit] {
 	border-radius: 4px;
 	width: 200px;
 	cursor: pointer;
-	background-color: red;
+	background-color: #c23b22;
 	border: 3px solid darkred;
 	color: white;
 	font-size: 18px;
 }
 
 input[type=submit]:hover {
-	background-color: lightcoral;
-	border: 3px solid red;
+	background-color: #d84930;
+	border: 3px solid #c23b22;
 }
 
 textarea {
@@ -103,10 +103,14 @@ textarea:focus {
 	background-color: black;
 }
 
+.active:hover {
+	background-color: rgb(44, 44, 44);
+}
+
 .homeHeader {
 	text-align: center;
 	padding: 30px;
-	background-color: red;
+	background-color: #c23b22;
 	border: 3px solid darkred;
 	color: white;
 	text-shadow: 6px 6px 5px darkred;
@@ -115,7 +119,7 @@ textarea:focus {
 
 .homePara {
 	width: 50%;
-	font-size: 16px;
+	font-size: 20px;
 	text-align: center;
 	margin: 0 auto;
 }
@@ -123,21 +127,23 @@ textarea:focus {
 .projectsHeader {
 	text-align: center;
 	padding: 30px;
-	background-color: red;
+	background-color: #c23b22;
 	border: 3px solid darkred;
 	color: white;
 	text-shadow: 6px 6px 5px darkred;
 	margin: 15px 300px;
+	margin-top: 125px;
 }
 
 .contactMeHeader {
 	text-align: center;
 	padding: 30px;
-	background-color: red;
+	background-color: #c23b22;
 	border: 3px solid darkred;
 	color: white;
 	text-shadow: 6px 6px 5px darkred;
 	margin: 15px 300px;
+	margin-top: 125px;
 }
 
 .navImg {
@@ -145,10 +151,12 @@ textarea:focus {
 }
 
 .headerBox {
-	background-color: black;
+	background-color: rgb(44, 44, 44);
 	width: 100%;
-	height: 300px;
+	height: 250px;
 	display: flex;
+	position: relative;
+	margin: 0;
 }
 
 .projectBoxesContainer {
@@ -160,7 +168,7 @@ textarea:focus {
 	width: 400px;
 	padding: 35px;
 	margin: 35px auto;
-	background-color: red;
+	background-color: #c23b22;
 	box-shadow: 4px 4px 4px black;
 }
 
@@ -183,8 +191,11 @@ textarea:focus {
 #headerText {
 	color: white;
 	font-size: 48px;
-	text-shadow: 2px 2px 6px darkgray;
+	text-shadow: 2px 2px 6px black;
 	margin: auto auto;
+	position: absolute;
+	top: 80px;
+	left: 50px;
 }
 
 #dateTime {
@@ -192,6 +203,9 @@ textarea:focus {
 	color: white;
 	font-size: 24px;
 	margin: auto auto;
+	position: absolute;
+	top: 80px;
+	left: 1000px;
 }
 
 #contactFormDiv {
