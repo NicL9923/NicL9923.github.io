@@ -143,7 +143,7 @@ textarea:focus {
 	color: white;
 	text-shadow: 6px 6px 5px darkred;
 	margin: 15px 300px;
-	margin-top: 125px;
+	margin-top: 0;
 }
 
 .navImg {
@@ -221,4 +221,16 @@ textarea:focus {
 	text-align: left;
 	background-color: darkgrey;
 	padding: 20px;
+}
+
+#aboutMeWrapper {
+	background-color: #d4d4d4;
+}
+
+#projectsWrapper {
+	background-color: #999999;
+}
+
+#contactmeWrapper {
+	background-color: #747474;
 }
