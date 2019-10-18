@@ -1,4 +1,4 @@
-# NicL9923.github.io\
+# NicL9923.github.io
 My Portfolio Website\
 -Static\
 -HTML/CSS/JavaScript\
