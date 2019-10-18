@@ -2,4 +2,4 @@
 My Portfolio Website\
 -Static\
 -HTML/CSS/JavaScript\
--Contact Me form through formspree.io\
+-Contact Me form through formspree.io
