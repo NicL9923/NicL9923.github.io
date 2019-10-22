@@ -132,7 +132,6 @@ textarea:focus {
 	color: white;
 	text-shadow: 6px 6px 5px darkred;
 	margin: 15px 300px;
-	margin-top: 125px;
 }
 
 .contactMeHeader {
@@ -194,8 +193,8 @@ textarea:focus {
 	text-shadow: 2px 2px 6px black;
 	margin: auto auto;
 	position: absolute;
-	top: 80px;
-	left: 50px;
+	top: 30%;
+	left: 5vw;
 }
 
 #dateTime {
@@ -204,8 +203,8 @@ textarea:focus {
 	font-size: 24px;
 	margin: auto auto;
 	position: absolute;
-	top: 80px;
-	left: 1500px;
+	top: 30%;
+	left: 80vw;
 }
 
 #contactFormDiv {
