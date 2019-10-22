@@ -171,6 +171,15 @@ textarea:focus {
 	box-shadow: 4px 4px 4px black;
 }
 
+.projectImg {
+	height: 60%;
+	width: 90%
+}
+
+.projectTitle {
+	font-size: 18px;
+}
+
 #nameShowcase {
 	float: none;
 	position: absolute;
