@@ -31,42 +31,41 @@
 	</ul>
 </nav>
 <div class="headerBox">
-<img src="images/PVheader.jpg" style="opacity: 0.3; width: 100%">
-<div id="headerText">Aspiring Software Engineer</div>
-<div id="dateTime">
-<div id="headerDate">Current Date</div>
-<div id="headerTime">Current Time</div>
-</div>
+	<img src="images/PVheader.jpg" style="opacity: 0.3; width: 100%">
+	<div id="headerText">Software Engineer Intern</div>
+	<div id="dateTime">
+		<div id="headerDate">Current Date</div>
+		<div id="headerTime">Current Time</div>
+	</div>
 </div>
 
 <script>
-function updateTime() {
+	function updateTime() {
+		var now = new Date();
+		var year = now.getFullYear();
+		var month = now.getMonth();
+		var day = now.getDate();
+		var hours = now.getHours();
+		var minutes = now.getMinutes();
+		var seconds = now.getSeconds();
+		const monthNames = ["January", "February", "March", "April", "May", "June", "July", "August", 
+		"September", "October", "November", "December"];
 
-var now = new Date();
-var year = now.getFullYear();
-var month = now.getMonth();
-var day = now.getDate();
-var hours = now.getHours();
-var minutes = now.getMinutes();
-var seconds = now.getSeconds();
-const monthNames = ["January", "February", "March", "April", "May", "June", "July", "August", 
-"September", "October", "November", "December"];
+		if (minutes < 10)
+			minutes = "0" + minutes;
+		if (seconds < 10)
+			seconds = "0" + seconds;
 
-if (minutes < 10)
-	minutes = "0" + minutes;
-if (seconds < 10)
-	seconds = "0" + seconds;
+		month = monthNames[month];
 
-month = monthNames[month];
+		var timeString = hours + ":" + minutes + ":" + seconds;
+		var dateString = month + " " + day + ", " + year;
 
-var timeString = hours + ":" + minutes + ":" + seconds;
-var dateString = month + " " + day + ", " + year;
+		document.getElementById("headerDate").innerHTML = dateString;
+		document.getElementById("headerTime").innerHTML = timeString;
+	}
 
-document.getElementById("headerDate").innerHTML = dateString;
-document.getElementById("headerTime").innerHTML = timeString;
-}
-
-setInterval(updateTime, 1000)
+	setInterval(updateTime, 1000)
 </script>
 
 </header>
@@ -74,32 +73,34 @@ setInterval(updateTime, 1000)
 <a name="aboutMe"></a>
 <div id="aboutMeWrapper">
 	<div>
-	<h1 class="homeHeader">About Me</h1>
-	<p class="homePara"> Howdy all! I am Nicolas Layne out of Houston, Texas, a second-year Junior at Prairie View A&M University
-		where I am working to obtain a B.S. with a major in Computer Science. I am
-		constantly looking to learn something new in the world of computers, programming, 
-		and software development. I love the problem-solving aspect in this line of work and
-		can't wait to get some experience in a workplace with a great team!
-	</p>
+		<h1 class="homeHeader">About Me</h1>
+		<p class="homePara"> Howdy all! I am Nicolas Layne a second-year Junior at Prairie View A&M University
+			where I am working to obtain a B.S. with a major in Computer Science. I am
+			constantly looking to learn something new in the world of computers, programming, 
+			and software development/engineering. I love the problem-solving aspect in this line of work and
+			can't wait to get some experience in a workplace with a great team!
+		</p>
 	</div>
 
 	<div>
-	<h1 class="homeHeader">Education</h1>
-	<p class="homePara"><b>Prairie View A&M University (Fall 2018 - December 2021)</b></p>
-	<p class="homePara"><b>Degree/Major:</b> B.S. in Computer Science</p>
-	<p class="homePara"><b>Classification:</b> Second-year Junior</p>
-	<p class="homePara"><b>Current CGPA:</b> 4.0</p>
+		<h1 class="homeHeader">Education</h1>
+		<p class="homePara"><b>Prairie View A&M University (Fall 2018 - December 2021)</b></p>
+		<p class="homePara"><b>Degree/Major:</b> B.S. in Computer Science</p>
+		<p class="homePara"><b>Classification:</b> Second-year Junior</p>
+		<p class="homePara"><b>Current CGPA:</b> 4.0</p>
 	</div>
 	
 	<div>
-	<h1 class="homeHeader">Skills</h1>
-	<p class="homePara"><b>Languages</b></p>
-	<p class="homePara">C++, Java, C#, Python</p>
-	<p class="homePara">HTML, CSS, JavaScript</p>
-	<p class="homePara"><b>Version Control</b></p>
-	<p class="homePara">Git/Github</p>
-	<p class="homePara"><b>Frameworks/Technologies</b></p>
-	<p class="homePara">ReactJS, NodeJS</p>
+		<h1 class="homeHeader">Skills</h1>
+		<p class="homePara"><b>Languages</b></p>
+		<p class="homePara">C++, Java, C#, Python</p>
+		<p class="homePara">HTML, CSS, JavaScript</p>
+		<br/>
+		<p class="homePara"><b>Version Control</b></p>
+		<p class="homePara">Git/Github</p>
+		<br/>
+		<p class="homePara"><b>Frameworks/Technologies</b></p>
+		<p class="homePara">MERN Stack: MongoDB, Express.js, React, Node.js</p>
 	</div>
 </div>
 
@@ -108,31 +109,49 @@ setInterval(updateTime, 1000)
 	<h1 class="projectsHeader">Projects</h1>
 
 	<div class="projectBoxesContainer">
-	<div class="projectBox">
-		<p class="projectTitle"><b>C++ Game Engine (WIP)</b></p>
-		<img src="images/placeholder.png" width="90%" height="200px" alt="Project Image">
-		<p>Description</p>
-	</div>
-	
-	<div class="projectBox">
-		<p class="projectTitle"><b>C++ Game (WIP)</b></p>
-		<img src="images/placeholder.png" width="90%" height="200px" alt="Project Image">
-		<p>Description</p>
-	</div>
+
+		<div class="projectBox">
+			<p class="projectTitle"><b><i>The Motorcyclist's Bible</i> - a Web App</b></p>
+			<img src="images/projMotobible.png" width="90%" height="200px" alt="Project Image">
+			<p><b>Created with:</b> JavaScript, React, Firebase(Backend/API)</p>
+			<p>This is by far my top project and continually gets hours thrown into it.
+				In short, it is a motorcyclists' community website featuring a blog, chatroom
+				based in discord, minigames centered on riding knowledge and skills, and other various
+				resources related to motorcycles.
+			</p>
+			<p>This is also where I delved deepest into React and now have a very good familiarity with
+				the library. Initially this project was meant to have its own custom backend in MongoDB, 
+				express, and Node but due to needing a quick and free hosting solution, Firebase caught on 
+				and has been in use since. It still involves some backend work (database, queries, API calls, etc.), 
+				but obviously at a slightly higher leve of abstraction so take that as you will.
+			</p>
+		</div>
+		
+		<div class="projectBox">
+			<p class="projectTitle"><b><i>Aiden's World</i> - a Python Game</b></p>
+			<img src="images/projAidensWorld.png" width="90%" height="200px" alt="Project Image">
+			<p><b>Created with:</b> Python, pygame</p>
+			<p>A very simple game with an objective of collecting all pumpkins in the level</p>
+		</div>
 	</div>
 
 	<div class="projectBoxesContainer">
-	<div class="projectBox">
-		<p class="projectTitle"><b>Single Linked List Library</b></p>
-		<img src="images/placeholder.png" width="90%" height="200px" alt="Project Image">
-		<p>Description</p>
+		<div class="projectBox">
+			<p class="projectTitle"><b>C++ Game & Game Engine (WIP)</b></p>
+			<p><b>Created with:</b> C++, OpenGL, GFML (Potentially rebuilding using SFML for time's sake)</p>
+			<p>This project is a very lengthy WIP, however all work can currently be seen on Github.
+				As the name implies, it is very minimalistic and purpose-oriented in order to learn
+				about the general inner workings of game engines in the most reasonable amount of time
+				(read: not years) and to see the performance benefits of a game written on C++.
+			</p>
 		</div>
 		
-	<div class="projectBox">
-		<p class="projectTitle"><b>Python Game</b></p>
-		<img src="images/placeholder.png" width="90%" height="200px" alt="Project Image">
-		<p>Description</p>
-	</div>
+		<div class="projectBox">
+			<p class="projectTitle"><b>Data Structures/Algorithms Libraries</b></p>
+			<p><b>Created with:</b> C++</p>
+			<p>A collection of header files covering all major data structures and algorithms (sorting/searching/etc)</p>
+		</div>
+
 	</div>
 
 </div>

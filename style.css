@@ -149,6 +149,10 @@ textarea:focus {
 	padding: 6px;
 }
 
+.navImg:hover {
+	background-color: rgba(211, 211, 211, 0.329);
+}
+
 .headerBox {
 	background-color: rgb(44, 44, 44);
 	width: 100%;
@@ -228,12 +232,15 @@ textarea:focus {
 
 #aboutMeWrapper {
 	background-color: #d4d4d4;
+	margin-bottom: 20px;
 }
 
 #projectsWrapper {
 	background-color: #999999;
+	padding: 10px;
 }
 
 #contactmeWrapper {
 	background-color: #747474;
+	padding: 10px;
 }
