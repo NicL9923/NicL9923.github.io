@@ -23,31 +23,6 @@ footer {
 	height: 125px;
 }
 
-.nav {
-	list-style-type: none;
-	margin: 0;
-	padding: 0;
-	overflow: hidden;
-	background-color: #c23b22;
-	text-align: center;
-	position: relative;
-}
-
-li {
-	float: left;
-}
-
-li a {
-	display: block;
-	color: white;
-	padding: 14px 14px;
-	text-decoration: none;
-}
-
-li a:hover {
-	background-color: darkred;
-}
-
 form {
 	display: flex;
 	flex-direction: column;
@@ -99,14 +74,6 @@ textarea:focus {
 	border: 2px solid darkred;
 }
 
-.active {
-	background-color: black;
-}
-
-.active:hover {
-	background-color: rgb(44, 44, 44);
-}
-
 .homeHeader {
 	text-align: center;
 	padding: 30px;
@@ -145,13 +112,13 @@ textarea:focus {
 	margin-top: 0;
 }
 
-.navImg {
+/*.navImg {
 	padding: 6px;
 }
 
 .navImg:hover {
 	background-color: rgba(211, 211, 211, 0.329);
-}
+}*/
 
 .headerBox {
 	background-color: rgb(44, 44, 44);
