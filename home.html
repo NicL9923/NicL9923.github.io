@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Nicolas Layne | Home</title>
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+	<link rel="stylesheet" href="style.css">
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="description" content="Portfolio website for Nicolas Layne">
+	<meta name="author" content="Nicolas Layne">
+	<link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <div class="container">
+        <!--Navbar-->
+        <nav class="navbar fixed-top navbar-expand-lg navbar-dark">
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".navbar-collapse" aria-controls="navbar-collapse" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <a class="navbar-brand" href="#">Nicolas Layne</a>
+
+            <div class="collapse navbar-collapse">
+                <ul class="nav navbar-nav">
+                    <li class="nav-item active">
+                        <a class="nav-link" href="#aboutMe">About Me <span class="sr-only">(current)</span></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#projects">Projects</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#contactMe">Contact Me</a>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="collapse navbar-collapse">
+                <ul class="nav navbar-nav ml-auto">
+                    <li class="nav-item socialIcon">
+                        <a class="nav-link" href="https://github.com/NicL9923"><img src="images/githubLogo.svg" height="30px"></a>
+                    </li>
+                    <li class="nav-item socialIcon">
+                        <a class="nav-link" href="https://www.linkedin.com/in/nicolas-layne"><img src="images/linkedinLogo.png" height="30px"></a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+
+        <!--Header Image-->
+        <header class="container headerBox">
+            <img class="img-fluid text-center" src="images/PVheader.jpg" style="opacity: 0.3;">
+            <div class="row">
+                <h1 class="col-md-6" id="headerText">Software Engineer</h1>
+                <div class="col-md-6 text-center" id="dateTime">
+                    <h4 id="headerDate">Current Date</h4>
+                    <h4 id="headerTime">Current Time</h4>
+                </div>
+            </div>
+        </header>
+
+        <!--About Me-->
+        <div class="container py-4" style="background-color: #b8b6b6;" id="aboutMe">
+            <div>
+                <h1 class="sectionHeader">About Me</h1>
+                <p class="homePara text-center"> Howdy all! I am Nicolas Layne a second-year Junior at Prairie View A&M University
+                    where I am working to obtain a B.S. with a major in Computer Science. I am
+                    constantly looking to learn something new in the world of computers, programming, 
+                    and software development/engineering. I love the problem-solving aspect in this line of work and
+                    can't wait to get some experience in a workplace with a great team!
+                </p>
+            </div>
+            <div class="row">
+                <div class="card mx-auto">
+                    <h2 class="card-header text-center">Education</h2>
+                    <div class="card-body">
+                        <p class="homePara"><b>Prairie View A&M University (SEP 2018 - DEC 2021)</b></p>
+                        <p class="homePara"><b>Degree/Major:</b> B.S. in Computer Science</p>
+                        <p class="homePara"><b>Classification:</b> Second-year Junior</p>
+                        <p class="homePara"><b>Current CGPA:</b> 4.0</p>
+                    </div>
+                </div>
+                
+                <div class="card mx-auto">
+                    <h2 class="card-header text-center">Skills</h2>
+                    <div class="card-body">
+                        <h3 class="homePara"><b>Languages</b></h3>
+                        <p class="homePara">C++, Java, C#, Python</p>
+                        <p class="homePara">HTML, CSS, JavaScript</p>
+                        <br>
+
+                        <h3 class="homePara"><b>Version Control</b></h3>
+                        <p class="homePara">Git/Github</p>
+                        <br>
+
+                        <h3 class="homePara"><b>Frameworks/Technologies</b></h3>
+                        <p class="homePara">MERN Stack: MongoDB, Express.js, React, Node.js</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="mt-2 text-center">
+                <a href="ResumePDF - Nicolas Layne.pdf"><button class="btn">View/Download My Resume</button></a>
+            </div>
+        </div>
+        
+        <!--Projects-->
+        <div class="container py-4" style="background-color: #999999;" id="projects">
+            <h1 class="sectionHeader">Projects</h1>
+        
+            <div class="row">
+                <div class="card my-2 mx-auto">
+                    <h3 class="card-header"><b><i>The Motorcyclist's Bible</i> - a React App</b></h3>
+                    <div class="card-body"> 
+                        <img src="images/projMotobible.png" width="90%" height="200px" alt="Project Image">
+                        <p><b>Created with:</b> JavaScript, React, Firebase(Backend/API)</p>
+                        <p class="overflow-auto projectDesc">This is by far my top project and continually gets hours thrown into it.
+                            In short, it is a motorcyclists' community website featuring a blog, chatroom
+                            based in discord, minigames centered on riding knowledge and skills, and other various
+                            resources related to motorcycles.
+                            This is also where I delved deepest into React and now have a very good familiarity with
+                            the library. Initially this project was meant to have its own custom backend in MongoDB, 
+                            express, and Node but due to needing a quick and free hosting solution, Firebase caught on 
+                            and has been in use since. It still involves some backend work (database, queries, API calls, etc.), 
+                            but obviously at a slightly higher leve of abstraction so take that as you will.
+                        </p>
+                    </div>
+                </div>
+                
+                <div class="card my-2 mx-auto">
+                    <h3 class="card-header"><b><i>Aiden's World</i> - a Python Game</b></h3>
+                    <div class="card-body">
+                        <img src="images/projAidensWorld.png" width="90%" height="200px" alt="Project Image">
+                        <p><b>Created with:</b> Python, pygame</p>
+                        <p class="overflow-auto projectDesc">A very simple game with an objective of collecting all pumpkins in the level</p>
+                    </div> 
+                </div>
+            </div>
+        
+            <div class="row">
+                <div class="card my-2 mx-auto">
+                    <h3 class="card-header"><b>Data Structures/Algorithms Libraries</b></h3>
+                    <div class="card-body">
+                        <p><b>Created with:</b> C++</p>
+                        <p class="overflow-auto projectDesc">A collection of header files covering all major data structures and algorithms (sorting/searching/etc)</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!--Contact Me-->
+        <div class="container py-4" style="background-color: #747474;" id="contactMe">
+            <h1 class="sectionHeader">Contact Me</h1>
+            <div class="text-center">
+                <form id ="contactForm" action="https://formspree.io/nicl9923@gmail.com" method="POST">
+                    <h2>Name:</h2>
+                    <input placeholder="Name" type="text" name="name">
+                    <h2>Email:</h2>
+                    <input placeholder="Email" type="email" name="_replyto">
+                    <h2>Message:</h2>
+                    <textarea rows="4" cols="50" placeholder="Message" name="message"></textarea>
+                    <input type="submit" value="Send">
+                </form>
+            </div>
+        </div>
+        
+        <!--Footer-->
+        <footer class="text-center">
+            <p>Nicolas Layne</p>
+            <p>NicL9923@gmail.com</p>
+            <p>Houston, Texas</p>
+        </footer>
+
+        <!--Scripts-->
+        <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+        <script type="text/javascript" src="clockScript.js"></script>
+    </div>
+</body>
+</html>
