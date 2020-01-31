@@ -110,10 +110,14 @@
         
             <div class="row">
                 <div class="card my-2 mx-auto">
-                    <h3 class="card-header"><b><i>The Motorcyclist's Bible</i> - a React App</b></h3>
+                    <div class="card-header">    
+                        <h3 class="card-title"><b><i>The Motorcyclist's Bible</i></b></h3>
+                        <h4 class="card-subtitle">a React App</h4>
+                        </div>
                     <div class="card-body"> 
                         <img src="images/projMotobible.png" width="90%" height="200px" alt="Project Image">
                         <p><b>Created with:</b> JavaScript, React, Firebase(Backend/API)</p>
+                        <p><b>Viewable at:</b> <a href="https://www.themotobible.com">themotobible.com</a></p>
                         <p class="overflow-auto projectDesc">This is by far my top project and continually gets hours thrown into it.
                             In short, it is a motorcyclists' community website featuring a blog, chatroom
                             based in discord, minigames centered on riding knowledge and skills, and other various
@@ -128,10 +132,15 @@
                 </div>
                 
                 <div class="card my-2 mx-auto">
-                    <h3 class="card-header"><b><i>Aiden's World</i> - a Python Game</b></h3>
+                    <div class="card-header">
+                        <h3 class="card-title"><b><i>Aiden's World</i></b></h3>
+                        <h4 class="card-subtitle">a Python Game</h4>
+                    </div>
+
                     <div class="card-body">
                         <img src="images/projAidensWorld.png" width="90%" height="200px" alt="Project Image">
                         <p><b>Created with:</b> Python, pygame</p>
+                        <p><b>Viewable at:</b> <a href="https://github.com/NicL9923/PythonGame">My Github</a></p>
                         <p class="overflow-auto projectDesc">A very simple game with an objective of collecting all pumpkins in the level</p>
                     </div> 
                 </div>
@@ -139,9 +148,14 @@
         
             <div class="row">
                 <div class="card my-2 mx-auto">
-                    <h3 class="card-header"><b>Data Structures/Algorithms Libraries</b></h3>
+                    <div class="card-header">
+                        <h3 class="card-title"><b>Data Structures/Algorithms Libraries</b></h3>
+                        <h4 class="card-subtitle">a C++ Library</h4>
+                    </div>
+
                     <div class="card-body">
                         <p><b>Created with:</b> C++</p>
+                        <p><b>Viewable at:</b> <a href="https://github.com/NicL9923/DataStructuresLibraries">My Github</a></p>
                         <p class="overflow-auto projectDesc">A collection of header files covering all major data structures and algorithms (sorting/searching/etc)</p>
                     </div>
                 </div>
@@ -152,20 +166,26 @@
         <div class="container py-4" style="background-color: #747474;" id="contactMe">
             <h1 class="sectionHeader">Contact Me</h1>
             <div class="text-center">
-                <form id ="contactForm" action="https://formspree.io/nicl9923@gmail.com" method="POST">
-                    <h2>Name:</h2>
-                    <input placeholder="Name" type="text" name="name">
-                    <h2>Email:</h2>
-                    <input placeholder="Email" type="email" name="_replyto">
-                    <h2>Message:</h2>
-                    <textarea rows="4" cols="50" placeholder="Message" name="message"></textarea>
-                    <input type="submit" value="Send">
+                <form class="p-3" id="contactForm" style="width: 50%;" action="https://formspree.io/nicl9923@gmail.com" method="POST">
+                    <div class="form-group">
+                        <h2>Name:</h2>
+                        <input class="form-control" placeholder="Name" type="text" name="name">
+                    </div>
+                    <div class="form-group">
+                        <h2>Email:</h2>
+                        <input class="form-control" placeholder="Email" type="email" name="_replyto">
+                    </div>
+                    <div class="form-group">
+                        <h2>Message:</h2>
+                        <textarea class="form-control" rows="5" placeholder="Message" name="message"></textarea>
+                    </div>
+                    <input class="form-group" type="submit" value="Send">
                 </form>
             </div>
         </div>
         
         <!--Footer-->
-        <footer class="text-center">
+        <footer class="text-center p-2">
             <p>Nicolas Layne</p>
             <p>NicL9923@gmail.com</p>
             <p>Houston, Texas</p>
