@@ -71,10 +71,11 @@ textarea:focus {
 .navbar {
 	background-color: #c23b22;
 	border-bottom: 3px solid darkred;
+	box-shadow: 0 8px 6px -4px rgb(39, 39, 39);
 }
 
 .socialIcon:hover {
-	background-color: rgba(128, 128, 128, 0.466);
+	background-color: rgba(155, 152, 152, 0.466);
 }
 
 .homePara {
@@ -97,6 +98,14 @@ textarea:focus {
 
 .card-header {
 	background-color: #992611;
+}
+
+.card-title {
+	color: white;
+}
+
+.card-subtitle {
+	color: grey;
 }
 
 .projectDesc {
