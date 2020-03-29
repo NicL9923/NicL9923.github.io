@@ -70,10 +70,10 @@
                 </div>
             </div>
         </div>
-        <div>
-            <div>
+        <div id="aboutMeDesc">
+            <div id="eduBox">
                 <h2>Education</h2>
-                <div>
+                <div style="color: white; padding-left: 10px;">
                     <p><b>Prairie View A&M University (SEP 2018 - DEC 2021)</b></p>
                     <p><b>Degree/Major:</b> B.S. in Computer Science</p>
                     <p><b>Classification:</b> Second-year Junior</p>
@@ -81,25 +81,30 @@
                 </div>
             </div>
             
-            <div>
+            <div id="skillsBox">
                 <h2>Skills</h2>
-                <div>
-                    <h3><b>Languages</b></h3>
-                    <p>C++, C#, Python</p>
-                    <p>JavaScript, HTML, CSS</p>
-                    <br>
+                <div id="subSkillsBox">
+                    <div style="left: 18%;">
+                        <h3><b>Languages</b></h3>
+                        <p>C++, C#, Python</p>
+                        <p>JavaScript, HTML, CSS</p>
+                    </div>
 
-                    <h3><b>Version Control</b></h3>
-                    <p>Git/GitHub</p>
-                    <br>
+                    <div>
+                        <h3><b>Version Control</b></h3>
+                        <p>Git/GitHub</p>
+                    </div>
 
-                    <h3><b>Frameworks/Technologies</b></h3>
-                    <p>MERN Stack: MongoDB, Express.js, React, Node.js</p>
+                    <div style="left: 80%;">
+                        <h3><b>Frameworks/Technologies</b></h3>
+                        <p>MERN Stack: MongoDB, Express.js, React, Node.js</p>
+                    </div>
                 </div>
             </div>
         </div>
 
-        <a href="ResumePDF - Nicolas Layne.pdf"><button>View/Download My Resume</button></a>
+        <h3>Like what you see?</h3>
+        <div style="text-align: center; margin-bottom: 20px;"><a href="ResumePDF - Nicolas Layne.pdf" id="resumeBn">View/Download My Resume</a></div>
     </div>
     
     <!--Projects-->
@@ -114,8 +119,8 @@
                     <h4 class="">a React App</h4>
                     </div>
                 <div class=""> 
-                    <img src="images/projMotobible.png" height="200" alt="Moto Bible Project Image">
-                    <p><b>Created with:</b> JavaScript, React, Node, Firebase(Backend/API)</p>
+                    <a href="https://www.themotobible.com"><img src="images/projMotobible.png" height="300" alt="Moto Bible Project Image"></a>
+                    <p><b>Created with:</b> JavaScript, React, Node, Firebase (Backend/API)</p>
                     <p><b>Viewable at:</b> <a href="https://www.themotobible.com">themotobible.com</a></p>
                     <p class="">This is by far my top project and continually gets hours thrown into it.
                         In short, it is a motorcyclists' community website featuring a blog, chatroom
@@ -137,7 +142,7 @@
                 </div>
 
                 <div class="">
-                    <img src="images/projAidensWorld.png" height="200px" alt="Aiden's World Project Image">
+                    <img src="images/projAidensWorld.png" height="300" alt="Aiden's World Project Image">
                     <p><b>Created with:</b> Python, pygame</p>
                     <p><b>Viewable at:</b> <a href="https://github.com/NicL9923/PythonGame">My Github</a></p>
                     <p class="">A very simple game with an objective of collecting all pumpkins in the level</p>
@@ -167,10 +172,10 @@
         <hr>
 
         <form class="" action="https://formspree.io/nicl9923@gmail.com" method="POST">
-            <label>Name: <input class="" placeholder="Name" type="text" name="name"></label>
-            <label>Email: <input class="" placeholder="Email" type="email" name="_replyto"></label>
-            <label>Message: <textarea class="" rows="5" cols="50" placeholder="Message" name="message"></textarea></label>
-            <input class="" type="submit" value="Send">
+            <label>Name<input id="nameInput" placeholder="Name" type="text" name="name"></label>
+            <label>Email<input id="emailInput" placeholder="Email" type="email" name="_replyto"></label>
+            <label>Message<textarea id="msgInput" rows="5" cols="50" placeholder="Message" name="message"></textarea></label>
+            <input id="submitBn" type="submit" value="Send">
         </form>
     </div>
     
