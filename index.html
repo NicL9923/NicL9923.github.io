@@ -8,10 +8,10 @@
     <meta name="author" content="Nicolas Layne">
     <link rel="stylesheet" href="style.css">
     <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
-    <link rel="icon" href="images/icon.png">
+    <link rel="icon" href="resources/images/icon.png">
 
     <!--Scripts-->
-    <script type="text/javascript" src="clockScript.js"></script>
+    <script type="text/javascript" src="scripts/clockScript.js"></script>
 </head>
 
 <body>
@@ -27,15 +27,15 @@
             <li id="myNameCont"><div id="myName">Nicolas Layne</div></li>
 
             <div id="navRight">
-                <li><a href="https://github.com/NicL9923"><img src="images/githubLogo.svg" height="30"></a></li>
-                <li><a href="https://www.linkedin.com/in/nicolas-layne"><img src="images/linkedinLogo.png" height="30"></a></li>
+                <li><a href="https://github.com/NicL9923"><img src="resources/images/githubLogo.svg" height="30"></a></li>
+                <li><a href="https://www.linkedin.com/in/nicolas-layne"><img src="resources/images/linkedinLogo.png" height="30"></a></li>
             </div>
         </ul>
     </nav>
 
     <!--Header Image-->
     <header>
-        <img src="images/header.png" height="600" width="1200" alt="Computer background">
+        <img src="resources/images/header.png" height="600" width="1200" alt="Computer background">
         <div>
             <h1 id="hdrTxt">Software Engineer</h1>
 
@@ -58,7 +58,7 @@
 
             <div id="aboutMeBio">
                 <div id ="aMBDiv1">
-                    <img id="myPic" src="images/myPic.png" height="250" width="250" alt="My picture">
+                    <img id="myPic" src="resources/images/myPic.png" height="250" width="250" alt="My picture">
                 </div>
                 <div id="aMBDiv2">
                     <p style="font-size: 22px;"> Howdy all! I am Nicolas Layne, a second-year Junior at Prairie View A&M University
@@ -70,19 +70,20 @@
                 </div>
             </div>
         </div>
+
         <div id="aboutMeDesc">
             <div id="eduBox">
-                <h2>Education</h2>
-                <div style="color: white; padding-left: 10px;">
+                <h2 style="color: white;">Education</h2>
+                <div style="padding-left: 10px;">
                     <p><b>Prairie View A&M University (SEP 2018 - DEC 2021)</b></p>
                     <p><b>Degree/Major:</b> B.S. in Computer Science</p>
                     <p><b>Classification:</b> Second-year Junior</p>
                     <p><b>Current CGPA:</b> 4.0</p>
                 </div>
             </div>
-            
+
             <div id="skillsBox">
-                <h2>Skills</h2>
+                <h2 style="color: white;">Skills</h2>
                 <div id="subSkillsBox">
                     <div style="left: 18%;">
                         <h3><b>Languages</b></h3>
@@ -103,26 +104,59 @@
             </div>
         </div>
 
+        <div id="experienceContainer">
+            <h2 id="experienceTitle">Experience</h2>
+            <div id="expBoxContainer">
+                <div class="expBox">
+                    <h3 class="expHeader">Experience 1</h3>
+                    <p class="expDesc">Description of exp 1</p>
+                </div>
+
+                <div class="expBox">
+                    <h3 class="expHeader">Experience 2</h3>
+                    <p class="expDesc">Description of exp 2</p>
+                </div>
+
+                <div class="expBox">
+                    <h3 class="expHeader">Experience 3</h3>
+                    <p class="expDesc">Description of exp 3</p>
+                </div>
+            </div>
+        </div>
+
         <h3>Like what you see?</h3>
         <div style="text-align: center; margin-bottom: 20px;"><a href="ResumePDF - Nicolas Layne.pdf" id="resumeBn">View/Download My Resume</a></div>
     </div>
     
     <!--Projects-->
     <div id="projects">
-        <h1 class="">Projects</h1>
+        <h1>Projects</h1>
         <hr>
     
-        <div class="">
-            <div id="motobibleSection">
-                <div class="">    
-                    <h3 class=""><b><i>The Motorcyclist's Bible</i></b></h3>
-                    <h4 class="">a React App</h4>
-                    </div>
-                <div class=""> 
-                    <a href="https://www.themotobible.com"><img src="images/projMotobible.png" height="300" alt="Moto Bible Project Image"></a>
+        <div id="projsGrid">
+            <div class="projCard">
+                <div>
+                    <h3 class="projTitle"><b>Aiden's World</b></h3>
+                    <h4 class="projSubtitle"><i>a Python Game</i></h4>
+                </div>
+                <div>
+                    <img src="resources/images/projAidensWorld.png" height="300" alt="Aiden's World Project Image">
+                    <p><b>Created with:</b> Python, pygame</p>
+                    <p><b>Viewable at:</b> <a href="https://github.com/NicL9923/PythonGame">My Github</a></p>
+                    <p>A very simple game with an equally simple objective of collecting all pumpkins in the level.</p>
+                </div> 
+            </div>
+
+            <div class="projCard">
+                <div>    
+                    <h3 class="projTitle"><b>The Motorcyclist's Bible</b></h3>
+                    <h4 class="projSubtitle"><i>a React App</i></h4>
+                </div>
+                <div> 
+                    <a href="https://www.themotobible.com"><img src="resources/images/projMotobible.png" height="300" alt="Moto Bible Project Image"></a>
                     <p><b>Created with:</b> JavaScript, React, Node, Firebase (Backend/API)</p>
                     <p><b>Viewable at:</b> <a href="https://www.themotobible.com">themotobible.com</a></p>
-                    <p class="">This is by far my top project and continually gets hours thrown into it.
+                    <p>This is by far my top project and continually gets hours thrown into it.
                         In short, it is a motorcyclists' community website featuring a blog, chatroom
                         based in discord, minigames centered on riding knowledge and skills, and other various
                         resources related to motorcycles.
@@ -130,37 +164,20 @@
                         the library. Initially this project was meant to have its own custom backend in MongoDB, 
                         express, and Node but due to needing a quick and free hosting solution, Firebase caught on 
                         and has been in use since. It still involves some backend work (database, queries, API calls, etc.), 
-                        but obviously at a slightly higher leve of abstraction so take that as you will.
+                        but obviously at a slightly higher level of abstraction so take that as you will.
                     </p>
                 </div>
             </div>
-            
-            <div id="aidenSection">
-                <div class="">
-                    <h3 class=""><b><i>Aiden's World</i></b></h3>
-                    <h4 class="">a Python Game</h4>
-                </div>
 
-                <div class="">
-                    <img src="images/projAidensWorld.png" height="300" alt="Aiden's World Project Image">
-                    <p><b>Created with:</b> Python, pygame</p>
-                    <p><b>Viewable at:</b> <a href="https://github.com/NicL9923/PythonGame">My Github</a></p>
-                    <p class="">A very simple game with an objective of collecting all pumpkins in the level</p>
-                </div> 
-            </div>
-        </div>
-    
-        <div class="">
-            <div id="dsaSection">
-                <div class="">
-                    <h3 class=""><b>Data Structures/Algorithms Libraries</b></h3>
-                    <h4 class="">a C++ Library</h4>
+            <div class="projCard">
+                <div>
+                    <h3 class="projTitle"><b>Data Structures/Algorithms Library</b></h3>
+                    <h4 class="projSubtitle"><i>a C++ Library</i></h4>
                 </div>
-
-                <div class="">
+                <div>
                     <p><b>Created with:</b> C++</p>
                     <p><b>Viewable at:</b> <a href="https://github.com/NicL9923/DataStructuresLibraries">My Github</a></p>
-                    <p class="">A collection of header files covering all major data structures and algorithms (sorting/searching/etc)</p>
+                    <p>A collection of header files covering all primary data structures and algorithms.</p>
                 </div>
             </div>
         </div>
@@ -168,10 +185,10 @@
     
     <!--Contact Me-->
     <div id="contactMe">
-        <h1 class="">Contact Me</h1>
+        <h1>Contact Me</h1>
         <hr>
 
-        <form class="" action="https://formspree.io/nicl9923@gmail.com" method="POST">
+        <form action="https://formspree.io/nicl9923@gmail.com" method="POST">
             <label>Name<input id="nameInput" placeholder="Name" type="text" name="name"></label>
             <label>Email<input id="emailInput" placeholder="Email" type="email" name="_replyto"></label>
             <label>Message<textarea id="msgInput" rows="5" cols="50" placeholder="Message" name="message"></textarea></label>
