@@ -2,5 +2,5 @@
 My Portfolio Website\
 -Static\
 -HTML/CSS/JavaScript\
--Updated styling to utilize Bootstrap for ease of customization/responsiveness\
+-Styling is 100% custom written by me\
 -Contact Me form through formspree.io
