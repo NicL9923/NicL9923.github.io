@@ -415,4 +415,42 @@ footer p {
 	1. Dropdown menu from Nicolas Layne, keep the icons
 	2. asd
 	*/
+
+	nav ul {
+		width: 90vw;
+	}
+
+	header img {
+		width: 95%;
+		height: 50vh;
+	}
+
+	#hdrDateTime {
+		display: none;
+	}
+
+	#aboutMeBio {
+		width: 100%;
+	}
+
+	#experienceContainer, #aboutMeDesc {
+		width: 100%;
+	}
+
+
+	#projsGrid {
+		grid-template-columns: auto;
+	}
+
+	.projCard {
+		width: 85%;
+	}
+
+	.projImg {
+		width: 100%;
+	}
+
+	form {
+		width: 80vw;
+	}
 }
