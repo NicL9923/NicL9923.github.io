@@ -1,0 +1,125 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Roboto', sans-serif;
+    color: #212121;
+}
+
+body {
+    background-color: #EAEAEA;
+}
+
+/*      NAV     */
+.navbar {
+    list-style-type: none;
+    display: block;
+    background-color: #212121;
+    color: #EAEAEA;
+}
+
+.navbar * {
+    color: #EAEAEA;
+    text-decoration: none;
+}
+
+.navbar a {
+    color: white;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 17px;
+    display: block;
+}
+
+.navbar a.icon {
+    background-color: #212121;
+    display: inline-block;
+}
+
+.navbar a.icon:hover {
+    background-color: #404040;
+}
+
+#navLinks {
+    display: none;
+}
+
+.navLogos {
+    display: flex;
+    flex-direction: row;
+    position: absolute;
+    top: 0%;
+    right: 0%;
+}
+
+.navLogos *:hover {
+    background-color: #404040;
+}
+
+/*      Header     */
+header {
+    display: grid;
+    place-items: center;
+    height: 400px;
+    width: 100vw;
+}
+
+.headerBox {
+    border-left: 5px solid #212121;
+    padding: 0 20px;
+}
+
+.headerName {
+    font-size: 72px;
+}
+
+.headerTitle {
+    font-size: 32px;
+    color: #505050;
+}
+
+#hdrDateTime {
+    margin-top: 25px;
+}
+
+#hdrDateTime * {
+    font-size: 16px;
+}
+
+/*      About Me     */
+.aboutMe {
+    background-color: #fafafa;
+}
+
+.aboutMeBio {
+    display: flex;
+    flex-direction: row;
+    place-items: center;
+    margin: 0 auto;
+    width: 50%;
+}
+
+.myPicDiv {
+    border-right: 3px solid #212121;
+    padding: 0 15px;
+    margin: 50px 0;
+}
+
+.myPic {
+    border-radius: 50%;
+    border: 3px solid #212121;
+}
+
+.myDesc {
+    padding: 0 15px;
+    margin: 50px 0;
+}
+
+.myDesc h2 {
+    font-size: 32px;
+    margin: 10px 0;
+}
+
+.myDesc p {
+    font-size: 18px;
+    color: #404040;
+}
