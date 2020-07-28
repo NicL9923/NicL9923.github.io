@@ -141,6 +141,8 @@ header {
 .projsHdr {
     text-align: center;
     margin-top: 30px;
+    font-size: 32px;
+    font-weight: bold;
 }
 
 .projsGrid {
@@ -150,10 +152,22 @@ header {
 }
 
 .projCard {
-    width: 400px;
+    width: 450px;
     margin: 30px auto;
     background-color: #fafafa;
     padding: 15px;
+    text-align: center;
+    box-shadow: 3px 3px 8px #212121;
+}
+
+.projImg {
+    width: 90%;
+    margin: 15px auto;
+}
+
+.projDesc {
+    text-align: left;
+    margin: 15px auto;
 }
 
 
@@ -169,10 +183,40 @@ header {
     display: inline-block;
     text-align: left;
     padding: 20px;
+    box-shadow: 3px 3px 8px #212121;
 }
 
 .contactMeForm * {
     display: block;
+}
+
+.formHdr {
+    text-align: center;
+    font-size: 32px;
+    font-weight: bold;
+}
+
+.formLabel {
+    margin: 15px 0;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.nameInput, .emailInput, .msgInput {
+    font-size: 16px;
+    padding: 5px;
+}
+
+.msgInput {
+    resize: vertical;
+}
+
+.submitBn {
+    padding: 10px;
+    font-size: 16px;
+    color: white;
+    background-color: #212121;
+    border: none;
 }
 
 /*      Footer      */
@@ -188,4 +232,48 @@ footer * {
 
 
 
-/*      TODO: Media Query       */
+/*      Media Query       */
+@media only screen and (max-width: 600px) {
+    .aboutMeBio {
+        flex-direction: column;
+        width: 95%;
+    }
+
+    .myPicDiv {
+        border: none;
+        margin: 30px 0;
+        margin-bottom: 10px;
+    }
+
+    .myDesc {
+        margin: 20px 0;
+        margin-top: 10px;
+    }
+
+    .aboutMeDesc {
+        flex-direction: column;
+        row-gap: 25px;
+    }
+
+    .projsGrid {
+        grid-template-columns: auto;
+    }
+
+    .projCard {
+        width: 85%;
+    }
+
+    .contactMeForm {
+        padding: 10px;
+        width: 85%;
+    }
+
+    .msgInput {
+        width: 95%;
+    }
+
+    .submitBn {
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
