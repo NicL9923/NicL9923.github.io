@@ -123,3 +123,47 @@ header {
     font-size: 18px;
     color: #404040;
 }
+
+.aboutMeDesc {
+    display: flex;
+    flex-direction: row;
+    margin: 0 auto;
+}
+
+
+/*      Projects       */
+
+
+
+/*      Contact Me      */
+.contactMe {
+    text-align: center;
+    background-color: #fafafa;
+}
+
+.contactMeForm {
+    background-color: #EAEAEA;
+    margin: 15px auto;
+    display: inline-block;
+    text-align: left;
+    padding: 20px;
+}
+
+.contactMeForm * {
+    display: block;
+}
+
+/*      Footer      */
+footer {
+    background-color: #212121;
+    padding: 35px;
+    text-align: center;
+}
+
+footer * {
+    color: #EAEAEA;
+}
+
+
+
+/*      TODO: Media Query       */

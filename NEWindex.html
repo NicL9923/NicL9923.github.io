@@ -48,58 +48,65 @@
     </header>
 
     <div class="aboutMe">
-        <div>
-            <div class="aboutMeBio">
-                <div class="myPicDiv">
-                    <img class="myPic" src="resources/images/myPic.png" height="250" width="250" alt="Nicolas Layne by motorcycle">
-                </div>
-                <div class="myDesc">
-                    <h2>About Me</h2>
+        <div class="aboutMeBio">
+            <div class="myPicDiv">
+                <img class="myPic" src="resources/images/myPic.png" height="250" width="250" alt="Nicolas Layne by motorcycle">
+            </div>
+            <div class="myDesc">
+                <h2>About Me</h2>
 
-                    <p> Howdy all! I am Nicolas Layne, a Senior in my third year at Prairie View A&M University
-                        where I am working to obtain a B.S. with a major in Computer Science. I'm
-                        constantly looking to learn something new in the world of computers, programming, 
-                        and software development/engineering. I love the problem-solving aspect in this line of work and
-                        can't wait to hack away at the next challenge with a great team!
-                    </p>
-                </div>
+                <p> Howdy all! I am Nicolas Layne, a Senior in my third year at Prairie View A&M University
+                    where I am working to obtain a B.S. with a major in Computer Science. I'm
+                    constantly looking to learn something new in the world of computers, programming, 
+                    and software development/engineering. I love the problem-solving aspect in this line of work and
+                    can't wait to hack away at the next challenge with a great team!
+                </p>
             </div>
         </div>
 
-        <div id="aboutMeDesc">
-            <div id="eduBox">
+        <div class="aboutMeDesc">
+            <div class="eduBox">
                 <h2>Education</h2>
                 <div>
                     <p>Prairie View A&M University (SEP 2018 - DEC 2021)</p>
                     <p>Degree/Major: B.S. in Computer Science</p>
-                    <p>Classification: Second-year Junior</p>
+                    <p>Classification: Senior</p>
                     <p>Current CGPA: 4.0</p>
                 </div>
             </div>
 
-            <div id="experienceContainer">
-                <h2 id="experienceTitle">Experience</h2>
-                <div id="expBoxContainer">
+            <div class="experienceContainer">
+                <h2 class="experienceTitle">Experience</h2>
+                <div class="expBoxContainer">
                     <div class="expBox">
-                        <h3 class="expHeader">Experience 1</h3>
-                        <p class="expDesc">Description of exp 1</p>
+                        <h3 class="expHeader">Microsoft</h3>
+                        <h4>Software Engineer Intern</h4>
+                        <p class="expDesc">
+                            Job description/accomplishments
+                        </p>
                     </div>
 
                     <div class="expBox">
-                        <h3 class="expHeader">Experience 2</h3>
-                        <p class="expDesc">Description of exp 2</p>
+                        <h3 class="expHeader">Prairie View A&M University</h3>
+                        <h4>Undergraduate Research Assistant</h4>
+                        <p class="expDesc">
+                            Job description/accomplishments
+                        </p>
                     </div>
 
                     <div class="expBox">
-                        <h3 class="expHeader">Experience 3</h3>
-                        <p class="expDesc">Description of exp 3</p>
+                        <h3 class="expHeader">The Home Depot</h3>
+                        <h4>Freight Team/Sales Associate</h4>
+                        <p class="expDesc">
+                            Job description/accomplishments
+                        </p>
                     </div>
                 </div>
             </div>
 
-            <div id="skillsBox">
+            <div class="skillsBox">
                 <h2>Skills</h2>
-                <div id="subSkillsBox">
+                <div class="subSkillsBox">
                     <div>
                         <h3>Languages</h3>
                         <p>C++, C#, Python</p>
@@ -119,15 +126,16 @@
             </div>
         </div>
 
-        <h3>Like what you see?</h3>
-        <div><a href="ResumePDF - Nicolas Layne.pdf" id="resumeBn">View/Download My Resume</a></div>
+        <div>
+            <h3>Like what you see?</h3>
+            <a href="ResumePDF - Nicolas Layne.pdf" class="resumeBn">View/Download My Resume</a>
+        </div>
     </div>
     
-    <!--Projects-->
-    <div id="projects">
+    <div class="projects">
         <h1>Projects</h1>
     
-        <div id="projsGrid">
+        <div class="projsGrid">
             <div class="projCard">
                 <div>
                     <h3 class="projTitle">Aiden's World</h3>
@@ -177,14 +185,14 @@
         </div>
     </div>
     
-    <div id="contactMe">
-        <h1>Contact Me</h1>
+    <div class="contactMe">
+        <form class="contactMeForm" action="https://formspree.io/nicl9923@gmail.com" method="POST">
+            <h1>Contact Me</h1>
 
-        <form action="https://formspree.io/nicl9923@gmail.com" method="POST">
-            <label>Name<input id="nameInput" placeholder="Name" type="text" name="name"></label>
-            <label>Email<input id="emailInput" placeholder="Email" type="email" name="_replyto"></label>
-            <label>Message<textarea id="msgInput" rows="5" cols="50" placeholder="Message" name="message"></textarea></label>
-            <input id="submitBn" type="submit" value="Send">
+            <label>Name<input class="nameInput" placeholder="Name" type="text" name="name"></label>
+            <label>Email<input class="emailInput" placeholder="Email" type="email" name="_replyto"></label>
+            <label>Message<textarea class="msgInput" rows="5" cols="50" placeholder="Message" name="message"></textarea></label>
+            <input class="submitBn" type="submit" value="Send">
         </form>
     </div>
     
