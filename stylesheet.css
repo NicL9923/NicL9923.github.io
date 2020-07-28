@@ -127,12 +127,34 @@ header {
 .aboutMeDesc {
     display: flex;
     flex-direction: row;
-    margin: 0 auto;
+    justify-content: center;
+    column-gap: 80px;
+}
+
+.resumeDiv {
+    text-align: center;
+    padding: 45px;
 }
 
 
 /*      Projects       */
+.projsHdr {
+    text-align: center;
+    margin-top: 30px;
+}
 
+.projsGrid {
+    display: grid;
+    grid-template-columns: auto auto auto;
+    column-gap: 100px;
+}
+
+.projCard {
+    width: 400px;
+    margin: 30px auto;
+    background-color: #fafafa;
+    padding: 15px;
+}
 
 
 /*      Contact Me      */
