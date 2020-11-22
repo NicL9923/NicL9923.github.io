@@ -131,9 +131,43 @@ header {
     column-gap: 80px;
 }
 
+.aboutMeDesc div h2 {
+    border-bottom: 2px solid #212121;
+    margin-bottom: 10px;
+    padding-bottom: 3px;
+}
+
+.eduBox * {
+    margin: 8px 0;
+}
+
+.expBox {
+    margin: 12px 0;
+    max-width: 25vw;
+}
+
+.subSkill {
+    margin: 12px 0;
+}
+
 .resumeDiv {
     text-align: center;
     padding: 45px;
+}
+
+.resumeBn {
+    background-color: #212121;
+    color: #fafafa;
+    padding: 15px;
+    margin: 25px auto;
+    transition: 0.3s ease;
+    display: block;
+    width: 200px;
+    text-decoration: none;
+}
+
+.resumeBn:hover {
+    background-color: #505050;
 }
 
 
