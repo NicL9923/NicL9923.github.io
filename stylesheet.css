@@ -287,6 +287,12 @@ footer * {
     .aboutMeDesc {
         flex-direction: column;
         row-gap: 25px;
+        width: 90vw;
+        margin: 0 auto;
+    }
+
+    .expBox {
+        max-width: 90vw;
     }
 
     .projsGrid {
