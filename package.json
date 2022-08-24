@@ -1,7 +1,7 @@
 {
   "name": "nic-gh-page",
   "version": "0.1.0",
-  "homepage": "https://NicL9923.github.io",
+  "homepage": "https://nicl9923.github.io",
   "private": true,
   "dependencies": {
     "@fluentui/react-components": "^9.2.0",
@@ -21,7 +21,8 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
-    "deploy": "gh-pages -d build",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -b main -d build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
