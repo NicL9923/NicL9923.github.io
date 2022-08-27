@@ -1,6 +1,22 @@
 import { Body1, Divider, Image, Subtitle1, Title1, Title3 } from '@fluentui/react-components';
+import axios from 'axios';
+import { useEffect, useState } from 'react';
 
 const AboutMe = () => {
+  const [profile, setProfile] = useState(undefined);
+
+  useEffect(() => {
+    axios
+      .get('https://api.linkedin.com/rest/people/(id:nicolas-layne)', {
+        headers: { 'X-RestLi-Protocol-Version': '2.0.0' },
+      })
+      .then((resp) => {
+        setProfile(resp.data);
+        console.log(profile);
+        console.log(resp.data);
+      });
+  }, []);
+
   return (
     <div>
       <div>
