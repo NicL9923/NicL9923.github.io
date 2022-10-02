@@ -1,1 +1,0 @@
-An overview of my career of building things
