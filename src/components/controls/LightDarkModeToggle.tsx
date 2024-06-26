@@ -7,8 +7,8 @@ const LightDarkModeToggle = () => {
   const isLightMode = colorMode === 'light';
 
   return (
-    <Button onClick={toggleColorMode} leftIcon={isLightMode ? <FaMoon /> : <FaSun />}>
-      {isLightMode ? 'Dark' : 'Light'} mode
+    <Button onClick={toggleColorMode} leftIcon={isLightMode ? <FaMoon /> : <FaSun />} mt={2}>
+      Turn the lights {isLightMode ? 'off' : 'on'}!
     </Button>
   );
 };

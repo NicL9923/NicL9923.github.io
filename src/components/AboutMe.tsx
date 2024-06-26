@@ -19,7 +19,7 @@ const AboutMe = () => {
   return (
     <Container maxW='container.md' centerContent>
       <HStack>
-        <Image borderRadius='full' boxSize='250px' src='/Nic&Kim.jpg' alt='Nic & Kim' />
+        <Image borderRadius='full' boxSize='230px' src='/Nic&Kim.jpg' alt='Nic & Kim' />
 
         <Divider orientation='vertical' height='175px' />
 
@@ -37,15 +37,15 @@ const AboutMe = () => {
         </VStack>
       </HStack>
 
-      <div>
+      <div style={{ marginTop: 4 }}>
         <Text>
           Hey there, nice to meet ya - I&apos;m the friendly neighborhood front-end-specializing software developer! I
           love building and learning about things with a team of equally curious folks - it&apos;s really that simple!
         </Text>
       </div>
 
-      <div>
-        <Heading size='md'>Primary Technical Skills</Heading>
+      <div style={{ marginTop: 10 }}>
+        <Heading size='md'>Primary technical skills</Heading>
 
         <HStack>
           <Tag size='lg' colorScheme='cyan'>
@@ -54,7 +54,7 @@ const AboutMe = () => {
           </Tag>
           <Tag size='lg' colorScheme='blue'>
             <TagLeftIcon as={SiTypescript} />
-            <TagLabel>TypeScript / JavaScript</TagLabel>
+            <TagLabel>TypeScript</TagLabel>
           </Tag>
           <Tag size='lg' colorScheme='purple'>
             <TagLeftIcon as={SiCsharp} />
