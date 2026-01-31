@@ -3,23 +3,67 @@ import { VscAzure } from 'react-icons/vsc';
 import { Card, CardContent } from './ui/card';
 import { Badge } from './ui/badge';
 import { ChevronHeader } from './ui/chevron-header';
+import {
+  Accordion,
+  AccordionContent,
+  AccordionItem,
+  AccordionTrigger,
+} from './ui/accordion';
+import { RoadmapTimeline, TimelineItem } from './ui/roadmap-timeline';
+import { ArcColors } from '../lib/colors';
+
+interface Project {
+  name: string;
+  description: string;
+  accentColor: string;
+  accomplishments: TimelineItem[];
+}
 
 const CurrentRole = () => {
-  const currentProjects = [
+  const currentProjects: Project[] = [
     {
-      name: 'Azure SRE Agent',
-      description: 'AI-powered site reliability engineering',
-      accentColor: '#E63946', // red
+      name: 'Azure Logic Apps - Data Mapper',
+      description: 'Cloud hosting networking features',
+      accentColor: ArcColors.yellow,
+      accomplishments: [
+        { title: 'Virtual Network Integration UX', completed: true },
+        { title: 'Private Endpoint Configuration', completed: true },
+        { title: 'Access Restrictions Redesign', completed: true },
+        { title: 'Hybrid Connections Management', completed: true },
+      ],
+    },
+    {
+      name: 'Azure App Service UX',
+      description: 'Cloud hosting networking features',
+      accentColor: ArcColors.cyan,
+      accomplishments: [
+        { title: 'Virtual Network Integration UX', completed: true },
+        { title: 'Private Endpoint Configuration', completed: true },
+        { title: 'Access Restrictions Redesign', completed: true },
+        { title: 'Hybrid Connections Management', completed: true },
+      ],
     },
     {
       name: 'Azure Container Apps',
       description: 'Serverless container platform',
-      accentColor: '#2A9D8F', // green
+      accentColor: ArcColors.green,
+      accomplishments: [
+        { title: 'Container App Environment Setup', completed: true },
+        { title: 'Revision Management UI', completed: true },
+        { title: 'Scaling Rules Configuration', completed: true },
+        { title: 'Dapr Integration Panel', completed: true },
+      ],
     },
     {
-      name: 'Azure App Service (Networking)',
-      description: 'Cloud hosting networking features',
-      accentColor: '#00B4D8', // cyan
+      name: 'Azure SRE Agent',
+      description: 'AI-powered site reliability engineering',
+      accentColor: ArcColors.red,
+      accomplishments: [
+        { title: 'Agent Chat Interface', completed: true },
+        { title: 'Diagnostic Insights Panel', completed: true },
+        { title: 'Automated Remediation Actions', completed: true },
+        { title: 'Incident Timeline View', completed: true },
+      ],
     },
   ];
 
@@ -33,8 +77,8 @@ const CurrentRole = () => {
           <div className="flex items-center justify-center">
             <ChevronHeader
               segments={[
-                { text: 'CURRENT', color: '#F4A261' },
-                { text: 'ROLE', color: '#E9C46A' },
+                { text: 'CURRENT', color: ArcColors.orange },
+                { text: 'ROLE', color: ArcColors.yellow },
               ]}
             />
           </div>
@@ -60,29 +104,43 @@ const CurrentRole = () => {
             <h4 className="text-lg font-semibold mb-3 text-center dark:glow-text-cyan">
               Major projects
             </h4>
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+
+            <Accordion type="single" collapsible className="w-full space-y-2">
               {currentProjects.map((project, index) => (
-                <Card
+                <AccordionItem
                   key={index}
-                  className="border dark:border-arc-cyan/20 dark:hover:border-arc-cyan/50 transition-all duration-300 overflow-hidden group"
+                  value={`project-${index}`}
+                  className="border dark:border-arc-cyan/20 rounded-lg overflow-hidden dark:hover:border-arc-cyan/40 transition-all duration-300"
                 >
-                  {/* Colored top accent for each project */}
-                  <div
-                    className="h-1 transition-all duration-300 group-hover:h-1.5"
-                    style={{
-                      backgroundColor: project.accentColor,
-                      boxShadow: `0 0 10px ${project.accentColor}50`,
-                    }}
-                  />
-                  <CardContent className="pt-4 text-center">
-                    <p className="font-bold mb-2">{project.name}</p>
-                    <p className="text-sm text-muted-foreground">
-                      {project.description}
-                    </p>
-                  </CardContent>
-                </Card>
+                  {/* Colored left accent */}
+                  <div className="flex">
+                    <div
+                      className="w-1 shrink-0"
+                      style={{
+                        backgroundColor: project.accentColor,
+                        boxShadow: `0 0 8px ${project.accentColor}50`,
+                      }}
+                    />
+                    <div className="flex-1 px-4">
+                      <AccordionTrigger className="hover:no-underline">
+                        <div className="flex flex-col items-start text-left">
+                          <span className="font-bold">{project.name}</span>
+                          <span className="text-xs text-muted-foreground">
+                            {project.description}
+                          </span>
+                        </div>
+                      </AccordionTrigger>
+                      <AccordionContent>
+                        <RoadmapTimeline
+                          items={project.accomplishments}
+                          accentColor={project.accentColor}
+                        />
+                      </AccordionContent>
+                    </div>
+                  </div>
+                </AccordionItem>
               ))}
-            </div>
+            </Accordion>
           </div>
         </div>
       </CardContent>

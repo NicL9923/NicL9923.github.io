@@ -1,3 +1,5 @@
+import { ArcColors, ArcColorArray } from '../../lib/colors';
+
 interface RainbowStripeProps {
   className?: string;
   vertical?: boolean;
@@ -9,14 +11,7 @@ const RainbowStripe = ({
   vertical = false,
   animate = false,
 }: RainbowStripeProps) => {
-  const colors = [
-    '#E63946', // Red
-    '#F4A261', // Orange
-    '#E9C46A', // Yellow
-    '#2A9D8F', // Green
-    '#00B4D8', // Cyan
-    '#0077B6', // Blue
-  ];
+  const colors = ArcColorArray;
 
   return (
     <div
@@ -49,12 +44,12 @@ const DiagonalStripes = ({ className = '' }: { className?: string }) => {
       >
         <defs>
           <linearGradient id="arcGradient" x1="0%" y1="0%" x2="100%" y2="0%">
-            <stop offset="0%" stopColor="#E63946" />
-            <stop offset="20%" stopColor="#F4A261" />
-            <stop offset="40%" stopColor="#E9C46A" />
-            <stop offset="60%" stopColor="#2A9D8F" />
-            <stop offset="80%" stopColor="#00B4D8" />
-            <stop offset="100%" stopColor="#0077B6" />
+            <stop offset="0%" stopColor={ArcColors.red} />
+            <stop offset="20%" stopColor={ArcColors.orange} />
+            <stop offset="40%" stopColor={ArcColors.yellow} />
+            <stop offset="60%" stopColor={ArcColors.green} />
+            <stop offset="80%" stopColor={ArcColors.cyan} />
+            <stop offset="100%" stopColor={ArcColors.blue} />
           </linearGradient>
         </defs>
         {/* Multiple diagonal lines */}
@@ -63,54 +58,54 @@ const DiagonalStripes = ({ className = '' }: { className?: string }) => {
           y1="20"
           x2="25"
           y2="0"
-          stroke="#E63946"
+          stroke={ArcColors.red}
           strokeWidth="2"
-          className="drop-shadow-[0_0_4px_#E63946]"
+          className={`drop-shadow-[0_0_4px_${ArcColors.red}]`}
         />
         <line
           x1="5"
           y1="20"
           x2="30"
           y2="0"
-          stroke="#F4A261"
+          stroke={ArcColors.orange}
           strokeWidth="2"
-          className="drop-shadow-[0_0_4px_#F4A261]"
+          className={`drop-shadow-[0_0_4px_${ArcColors.orange}]`}
         />
         <line
           x1="10"
           y1="20"
           x2="35"
           y2="0"
-          stroke="#E9C46A"
+          stroke={ArcColors.yellow}
           strokeWidth="2"
-          className="drop-shadow-[0_0_4px_#E9C46A]"
+          className={`drop-shadow-[0_0_4px_${ArcColors.yellow}]`}
         />
         <line
           x1="15"
           y1="20"
           x2="40"
           y2="0"
-          stroke="#2A9D8F"
+          stroke={ArcColors.green}
           strokeWidth="2"
-          className="drop-shadow-[0_0_4px_#2A9D8F]"
+          className={`drop-shadow-[0_0_4px_${ArcColors.green}]`}
         />
         <line
           x1="20"
           y1="20"
           x2="45"
           y2="0"
-          stroke="#00B4D8"
+          stroke={ArcColors.cyan}
           strokeWidth="2"
-          className="drop-shadow-[0_0_4px_#00B4D8]"
+          className={`drop-shadow-[0_0_4px_${ArcColors.cyan}]`}
         />
         <line
           x1="25"
           y1="20"
           x2="50"
           y2="0"
-          stroke="#0077B6"
+          stroke={ArcColors.blue}
           strokeWidth="2"
-          className="drop-shadow-[0_0_4px_#0077B6]"
+          className={`drop-shadow-[0_0_4px_${ArcColors.blue}]`}
         />
       </svg>
     </div>

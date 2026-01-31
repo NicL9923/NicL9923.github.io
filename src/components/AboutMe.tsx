@@ -110,7 +110,7 @@ const AboutMe = () => {
                 </Badge>
                 <Badge
                   variant="secondary"
-                  className="text-sm gap-1 bg-arc-green/20 text-arc-green border border-arc-green/30 dark:shadow-[0_0_10px_rgba(42,157,143,0.2)]"
+                  className="text-sm gap-1 bg-[#512BD4]/20 text-[#512BD4] border border-[#512BD4]/30 dark:text-[#a78bfa] dark:shadow-[0_0_10px_rgba(81,43,212,0.2)]"
                 >
                   <SiDotnet className="h-4 w-4" />
                   .NET
