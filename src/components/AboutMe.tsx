@@ -1,9 +1,9 @@
-import { FaGithub, FaLinkedin } from 'react-icons/fa'
-import { SiSharp, SiReact, SiTypescript } from 'react-icons/si'
-import { Card, CardContent } from '@/components/ui/card'
-import { Button } from '@/components/ui/button'
-import { Badge } from '@/components/ui/badge'
-import CurrentRole from './CurrentRole'
+import { FaGithub, FaLinkedin } from 'react-icons/fa';
+import { SiSharp, SiReact, SiTypescript } from 'react-icons/si';
+import { Card, CardContent } from '@/components/ui/card';
+import { Button } from '@/components/ui/button';
+import { Badge } from '@/components/ui/badge';
+import CurrentRole from './CurrentRole';
 
 const AboutMe = () => {
   return (
@@ -94,7 +94,7 @@ const AboutMe = () => {
         <CurrentRole />
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default AboutMe
+export default AboutMe;

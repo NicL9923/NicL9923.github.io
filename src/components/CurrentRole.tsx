@@ -1,7 +1,7 @@
-import { FaMicrosoft } from 'react-icons/fa'
-import { VscAzure } from 'react-icons/vsc'
-import { Card, CardContent } from '@/components/ui/card'
-import { Badge } from '@/components/ui/badge'
+import { FaMicrosoft } from 'react-icons/fa';
+import { VscAzure } from 'react-icons/vsc';
+import { Card, CardContent } from '@/components/ui/card';
+import { Badge } from '@/components/ui/badge';
 
 const CurrentRole = () => {
   const currentProjects = [
@@ -17,7 +17,7 @@ const CurrentRole = () => {
       name: 'Azure App Service (Networking)',
       description: 'Cloud hosting networking features',
     },
-  ]
+  ];
 
   return (
     <Card>
@@ -61,7 +61,7 @@ const CurrentRole = () => {
         </div>
       </CardContent>
     </Card>
-  )
-}
+  );
+};
 
-export default CurrentRole
+export default CurrentRole;

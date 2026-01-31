@@ -1,6 +1,6 @@
-import AboutMe from './components/AboutMe'
-import LightDarkModeToggle from './components/controls/LightDarkModeToggle'
-import ParticlesBackground from './components/ParticlesBackground'
+import AboutMe from './components/AboutMe';
+import LightDarkModeToggle from './components/controls/LightDarkModeToggle';
+import ParticlesBackground from './components/ParticlesBackground';
 
 const App = () => {
   return (
@@ -11,7 +11,7 @@ const App = () => {
         <AboutMe />
       </div>
     </>
-  )
-}
+  );
+};
 
-export default App
+export default App;

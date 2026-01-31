@@ -8,7 +8,6 @@ An overview of my career of building things
 - **Build Tool**: Vite
 - **UI Library**: shadcn/ui + Tailwind CSS
 - **Code Quality**: ESLint, Prettier, Husky
-- **Deployment**: GitHub Pages (via GitHub Actions)
 
 ## Deployment
 

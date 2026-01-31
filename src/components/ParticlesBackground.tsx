@@ -1,27 +1,27 @@
-import { useEffect, useMemo, useState } from 'react'
-import Particles, { initParticlesEngine } from '@tsparticles/react'
+import { useEffect, useMemo, useState } from 'react';
+import Particles, { initParticlesEngine } from '@tsparticles/react';
 import {
   type Container as ParticlesContainer,
   type ISourceOptions,
-} from '@tsparticles/engine'
-import { loadSlim } from '@tsparticles/slim'
+} from '@tsparticles/engine';
+import { loadSlim } from '@tsparticles/slim';
 
 const ParticlesBackground = () => {
-  const [init, setInit] = useState(false)
+  const [init, setInit] = useState(false);
 
   useEffect(() => {
     initParticlesEngine(async (engine) => {
-      await loadSlim(engine)
+      await loadSlim(engine);
     }).then(() => {
-      setInit(true)
-    })
-  }, [])
+      setInit(true);
+    });
+  }, []);
 
   const particlesLoaded = async (
     container?: ParticlesContainer
   ): Promise<void> => {
-    console.log(container)
-  }
+    console.log(container);
+  };
 
   const particleOptions = useMemo(
     (): ISourceOptions => ({
@@ -87,10 +87,10 @@ const ParticlesBackground = () => {
       detectRetina: true,
     }),
     []
-  )
+  );
 
   if (!init) {
-    return null
+    return null;
   }
 
   return (
@@ -108,7 +108,7 @@ const ParticlesBackground = () => {
         pointerEvents: 'none',
       }}
     />
-  )
-}
+  );
+};
 
-export default ParticlesBackground
+export default ParticlesBackground;
