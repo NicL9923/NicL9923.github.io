@@ -1,7 +1,7 @@
 import { FaMicrosoft } from 'react-icons/fa';
 import { VscAzure } from 'react-icons/vsc';
-import { Card, CardContent } from '@/components/ui/card';
-import { Badge } from '@/components/ui/badge';
+import { Card, CardContent } from './ui/card';
+import { Badge } from './ui/badge';
 
 const CurrentRole = () => {
   const currentProjects = [

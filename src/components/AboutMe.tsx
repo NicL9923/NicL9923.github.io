@@ -1,8 +1,8 @@
 import { FaGithub, FaLinkedin } from 'react-icons/fa';
 import { SiSharp, SiReact, SiTypescript } from 'react-icons/si';
-import { Card, CardContent } from '@/components/ui/card';
-import { Button } from '@/components/ui/button';
-import { Badge } from '@/components/ui/badge';
+import { Card, CardContent } from './ui/card';
+import { Button } from './ui/button';
+import { Badge } from './ui/badge';
 import CurrentRole from './CurrentRole';
 
 const AboutMe = () => {

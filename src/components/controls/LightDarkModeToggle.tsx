@@ -1,6 +1,6 @@
 import { useTheme } from 'next-themes';
 import { FaSun, FaMoon } from 'react-icons/fa';
-import { Button } from '@/components/ui/button';
+import { Button } from '../ui/button';
 
 const LightDarkModeToggle = () => {
   const { theme, setTheme } = useTheme();
