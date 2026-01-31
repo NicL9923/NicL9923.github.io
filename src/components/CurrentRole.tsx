@@ -11,7 +11,7 @@ import {
   Stack,
 } from '@chakra-ui/react'
 import { FaMicrosoft } from 'react-icons/fa'
-import { SiMicrosoftazure } from 'react-icons/si'
+import { VscAzure } from 'react-icons/vsc'
 
 const CurrentRole = () => {
   const currentProjects = [
@@ -43,7 +43,7 @@ const CurrentRole = () => {
               <Heading size="md">Microsoft</Heading>
             </HStack>
             <HStack>
-              <SiMicrosoftazure color="#0078D4" />
+              <VscAzure color="#0078D4" />
               <Text fontWeight="semibold">Azure App Service UX</Text>
             </HStack>
             <Badge colorScheme="blue" fontSize="md" px={3} py={1}>

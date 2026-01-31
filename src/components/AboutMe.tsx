@@ -16,7 +16,7 @@ import {
   VStack,
 } from '@chakra-ui/react'
 import { FaGithub, FaLinkedin } from 'react-icons/fa'
-import { SiCsharp, SiReact, SiTypescript } from 'react-icons/si'
+import { SiSharp, SiReact, SiTypescript } from 'react-icons/si'
 import CurrentRole from './CurrentRole'
 
 const AboutMe = () => {
@@ -85,7 +85,7 @@ const AboutMe = () => {
                     <TagLabel>TypeScript</TagLabel>
                   </Tag>
                   <Tag size="lg" colorScheme="blue">
-                    <TagLeftIcon as={SiCsharp} />
+                    <TagLeftIcon as={SiSharp} />
                     <TagLabel>C#</TagLabel>
                   </Tag>
                 </HStack>
