@@ -1,102 +1,99 @@
-import {
-  Card,
-  CardBody,
-  Container,
-  HStack,
-  Heading,
-  IconButton,
-  Image,
-  Link,
-  ScaleFade,
-  Stack,
-  Tag,
-  TagLabel,
-  TagLeftIcon,
-  Text,
-  VStack,
-} from '@chakra-ui/react'
 import { FaGithub, FaLinkedin } from 'react-icons/fa'
 import { SiSharp, SiReact, SiTypescript } from 'react-icons/si'
+import { Card, CardContent } from '@/components/ui/card'
+import { Button } from '@/components/ui/button'
+import { Badge } from '@/components/ui/badge'
 import CurrentRole from './CurrentRole'
 
 const AboutMe = () => {
   return (
-    <Container maxW="container.md" centerContent>
-      <ScaleFade
-        initialScale={0.5}
-        transition={{ enter: { duration: 0.5 } }}
-        in
-      >
-        <Stack direction="column" spacing={6}>
-          <Card>
-            <CardBody>
-              <Stack direction="column" spacing={4}>
-                <Stack
-                  direction={['column', 'row']}
-                  align="center"
-                  justifyContent="space-evenly"
-                >
-                  <Image
-                    borderRadius="full"
-                    boxSize="230px"
-                    src="./Nic&Kim.jpg"
-                    alt="Nic & Kim"
-                  />
+    <div className="w-full max-w-2xl px-4">
+      <div className="flex flex-col gap-6 animate-in fade-in zoom-in-50 duration-500">
+        <Card>
+          <CardContent className="pt-6">
+            <div className="flex flex-col gap-4">
+              <div className="flex flex-col sm:flex-row items-center justify-evenly gap-4">
+                <img
+                  className="rounded-full w-[230px] h-[230px] object-cover"
+                  src="./Nic&Kim.jpg"
+                  alt="Nic & Kim"
+                />
 
-                  <VStack>
-                    <Heading size="xl">Nicolas Layne</Heading>
-                    <Heading size="md">Software Engineer</Heading>
+                <div className="flex flex-col items-center">
+                  <h1 className="text-3xl font-bold">Nicolas Layne</h1>
+                  <h2 className="text-xl text-muted-foreground">
+                    Software Engineer
+                  </h2>
 
-                    <HStack mt={2}>
-                      <Link href="https://github.com/NicL9923" isExternal>
-                        <IconButton
-                          icon={<FaGithub />}
-                          aria-label="Nicolas' Github"
-                        />
-                      </Link>
-                      <Link
-                        href="https://linkedin.com/in/nicolas-layne/"
-                        isExternal
+                  <div className="flex gap-2 mt-2">
+                    <a
+                      href="https://github.com/NicL9923"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      <Button
+                        variant="outline"
+                        size="icon"
+                        aria-label="Nicolas' Github"
                       >
-                        <IconButton
-                          colorScheme="linkedin"
-                          icon={<FaLinkedin />}
-                          aria-label="Nicolas' LinkedIn"
-                        />
-                      </Link>
-                    </HStack>
-                  </VStack>
-                </Stack>
+                        <FaGithub className="h-5 w-5" />
+                      </Button>
+                    </a>
+                    <a
+                      href="https://linkedin.com/in/nicolas-layne/"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      <Button
+                        variant="outline"
+                        size="icon"
+                        aria-label="Nicolas' LinkedIn"
+                        className="text-[#0A66C2] hover:text-[#0A66C2]"
+                      >
+                        <FaLinkedin className="h-5 w-5" />
+                      </Button>
+                    </a>
+                  </div>
+                </div>
+              </div>
 
-                <Text textAlign="center">
-                  Hey there, nice to meet ya - I&apos;m your friendly
-                  neighborhood front-end-specializing software engineer 🤠! I
-                  love building and learning about things with a team of equally
-                  curious and passionate folks - it&apos;s really that simple!
-                </Text>
+              <p className="text-center">
+                Hey there, nice to meet ya - I&apos;m your friendly neighborhood
+                front-end-specializing software engineer 🤠! I love building and
+                learning about things with a team of equally curious and
+                passionate folks - it&apos;s really that simple!
+              </p>
 
-                <HStack justifyContent="center">
-                  <Tag size="lg" colorScheme="cyan">
-                    <TagLeftIcon as={SiReact} />
-                    <TagLabel>React</TagLabel>
-                  </Tag>
-                  <Tag size="lg" colorScheme="blue">
-                    <TagLeftIcon as={SiTypescript} />
-                    <TagLabel>TypeScript</TagLabel>
-                  </Tag>
-                  <Tag size="lg" colorScheme="blue">
-                    <TagLeftIcon as={SiSharp} />
-                    <TagLabel>C#</TagLabel>
-                  </Tag>
-                </HStack>
-              </Stack>
-            </CardBody>
-          </Card>
+              <div className="flex justify-center gap-2 flex-wrap">
+                <Badge
+                  variant="secondary"
+                  className="text-sm gap-1 bg-cyan-100 text-cyan-800 dark:bg-cyan-900 dark:text-cyan-100"
+                >
+                  <SiReact className="h-4 w-4" />
+                  React
+                </Badge>
+                <Badge
+                  variant="secondary"
+                  className="text-sm gap-1 bg-blue-100 text-blue-800 dark:bg-blue-900 dark:text-blue-100"
+                >
+                  <SiTypescript className="h-4 w-4" />
+                  TypeScript
+                </Badge>
+                <Badge
+                  variant="secondary"
+                  className="text-sm gap-1 bg-purple-100 text-purple-800 dark:bg-purple-900 dark:text-purple-100"
+                >
+                  <SiSharp className="h-4 w-4" />
+                  C#
+                </Badge>
+              </div>
+            </div>
+          </CardContent>
+        </Card>
 
-          <CurrentRole />
-        </Stack>
-      </ScaleFade>
-    </Container>
+        <CurrentRole />
+      </div>
+    </div>
   )
 }
 

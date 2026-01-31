@@ -4,9 +4,9 @@ An overview of my career of building things
 
 ## Tech Stack
 
-- **Framework**: React 18 with TypeScript
+- **Framework**: React 19 with TypeScript
 - **Build Tool**: Vite
-- **UI Library**: Chakra UI
+- **UI Library**: shadcn/ui + Tailwind CSS
 - **Code Quality**: ESLint, Prettier, Husky
 - **Deployment**: GitHub Pages (via GitHub Actions)
 
