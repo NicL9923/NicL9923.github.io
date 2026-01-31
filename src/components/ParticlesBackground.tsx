@@ -49,13 +49,21 @@ const ParticlesBackground = () => {
       },
       particles: {
         color: {
-          value: ['#3182ce', '#00b8d4', '#0bc5ea'],
+          // ARC Raiders color palette
+          value: [
+            '#E63946',
+            '#F4A261',
+            '#E9C46A',
+            '#2A9D8F',
+            '#00B4D8',
+            '#0077B6',
+          ],
         },
         links: {
-          color: '#3182ce',
+          color: '#00B4D8',
           distance: 150,
           enable: true,
-          opacity: 0.3,
+          opacity: 0.2,
           width: 1,
         },
         move: {
@@ -65,23 +73,23 @@ const ParticlesBackground = () => {
             default: 'bounce',
           },
           random: false,
-          speed: 1,
+          speed: 0.8,
           straight: false,
         },
         number: {
           density: {
             enable: true,
           },
-          value: 80,
+          value: 60,
         },
         opacity: {
-          value: 0.5,
+          value: 0.6,
         },
         shape: {
           type: 'circle',
         },
         size: {
-          value: { min: 1, max: 5 },
+          value: { min: 1, max: 4 },
         },
       },
       detectRetina: true,
