@@ -8,9 +8,8 @@ An overview of my career of building things
 - **Build Tool**: Vite
 - **UI Library**: Chakra UI
 - **Code Quality**: ESLint, Prettier, Husky
-- **Deployment**: GitHub Pages
+- **Deployment**: GitHub Pages (via GitHub Actions)
 
 ## Deployment
 
-1. `npm run build` (commit to `dev`)
-2. `npm run deploy` (static content served from `main`)
+Automatic! Push to `main` and GitHub Actions builds and deploys to GitHub Pages.
