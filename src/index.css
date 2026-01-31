@@ -178,6 +178,28 @@
   animation: accordion-up 0.2s ease-out;
 }
 
+/* Boot sequence scan line animation */
+@keyframes scan {
+  0% {
+    top: -2px;
+    opacity: 0;
+  }
+  10% {
+    opacity: 1;
+  }
+  90% {
+    opacity: 1;
+  }
+  100% {
+    top: 100%;
+    opacity: 0;
+  }
+}
+
+.animate-scan {
+  animation: scan 2s linear infinite;
+}
+
 /* Scanline effect for retro feel */
 .scanlines::after {
   content: '';
