@@ -5,16 +5,12 @@ import CurrentRole from './CurrentRole';
 import { Badge } from './ui/badge';
 import { Button } from './ui/button';
 import { Card, CardContent } from './ui/card';
-import { ChevronHeader } from './ui/chevron-header';
-import { RainbowStripe } from './ui/rainbow-stripe';
+import { GlowHeader } from './ui/glow-header';
 
 const AboutMe = () => {
   return (
     <div className="w-full max-w-2xl px-4">
       <div className="flex flex-col gap-6 animate-in fade-in zoom-in-50 duration-500">
-        {/* Rainbow stripe accent at top */}
-        <RainbowStripe className="h-1.5 w-full rounded-full overflow-hidden" />
-
         <Card className="dark:border-glow dark:bg-card/80 backdrop-blur-sm overflow-hidden">
           {/* Subtle top accent line */}
           <div className="h-0.5 rainbow-border" />
@@ -33,14 +29,7 @@ const AboutMe = () => {
                 </div>
 
                 <div className="flex flex-col items-center">
-                  {/* Chevron-style name header */}
-                  <ChevronHeader
-                    segments={[
-                      { text: 'NICOLAS', color: '#023E8A' },
-                      { text: 'LAYNE', color: '#00B4D8' },
-                    ]}
-                    className="mb-2"
-                  />
+                  <GlowHeader text="NICOLAS LAYNE" className="mb-2" />
                   <h2 className="text-xl text-muted-foreground dark:glow-text-cyan">
                     Software Engineer
                   </h2>
@@ -121,9 +110,6 @@ const AboutMe = () => {
         </Card>
 
         <CurrentRole />
-
-        {/* Bottom rainbow accent */}
-        <RainbowStripe className="h-1.5 w-full rounded-full overflow-hidden" />
       </div>
     </div>
   );

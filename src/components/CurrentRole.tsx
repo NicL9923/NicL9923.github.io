@@ -2,7 +2,7 @@ import { FaMicrosoft } from 'react-icons/fa';
 import { VscAzure } from 'react-icons/vsc';
 import { Card, CardContent } from './ui/card';
 import { Badge } from './ui/badge';
-import { ChevronHeader } from './ui/chevron-header';
+import { GlowHeader } from './ui/glow-header';
 import {
   Accordion,
   AccordionContent,
@@ -23,46 +23,98 @@ const CurrentRole = () => {
   const currentProjects: Project[] = [
     {
       name: 'Azure Logic Apps - Data Mapper',
-      description: 'Cloud hosting networking features',
+      description: 'A modern web-based schema transformation tool',
       accentColor: ArcColors.yellow,
       accomplishments: [
-        { title: 'Virtual Network Integration UX', completed: true },
-        { title: 'Private Endpoint Configuration', completed: true },
-        { title: 'Access Restrictions Redesign', completed: true },
-        { title: 'Hybrid Connections Management', completed: true },
+        {
+          title: 'Complex custom mapping logic and state management',
+          completed: true,
+        },
+        {
+          title: '"Simple" custom layouting algorithm with reactflow',
+          completed: true,
+        },
+        {
+          title: 'Complex reusable components such as nested trees',
+          completed: true,
+        },
+        {
+          title:
+            'Maintenance of standalone web app for dev + bootstrapping of VS Code extension wrapper',
+          completed: true,
+        },
       ],
     },
     {
       name: 'Azure App Service UX',
-      description: 'Cloud hosting networking features',
+      description: 'Azure Portal extension for App Service functionality',
       accentColor: ArcColors.cyan,
       accomplishments: [
-        { title: 'Virtual Network Integration UX', completed: true },
-        { title: 'Private Endpoint Configuration', completed: true },
-        { title: 'Access Restrictions Redesign', completed: true },
-        { title: 'Hybrid Connections Management', completed: true },
+        {
+          title: 'Networking (Hub/Overview, VNet integration, etc.)',
+          completed: true,
+        },
+        {
+          title:
+            'E2E testing team - helped build up framework for testing Azure Portal extension using Playwright',
+          completed: true,
+        },
+        { title: 'Documentation - religiously maintain docs', completed: true },
+        {
+          title: 'Knowledge sharer, motivator, humor embracer',
+          completed: true,
+        },
       ],
     },
     {
-      name: 'Azure Container Apps',
-      description: 'Serverless container platform',
+      name: 'Azure Container Apps UX',
+      description:
+        'Helped build out the initial years and core functionality for the Azure Portal UX',
       accentColor: ArcColors.green,
       accomplishments: [
-        { title: 'Container App Environment Setup', completed: true },
-        { title: 'Revision Management UI', completed: true },
-        { title: 'Scaling Rules Configuration', completed: true },
-        { title: 'Dapr Integration Panel', completed: true },
+        {
+          title:
+            'Rewrite and addition of major experiences such as "Revision management", "Containers", and "Log stream"',
+          completed: true,
+        },
+        {
+          title:
+            'Included multiple resource types such as "Jobs" and "Session Pools" (smart sharing of functionality)',
+          completed: true,
+        },
+        { title: 'Heavy use of experimentation/flighting', completed: true },
       ],
     },
     {
       name: 'Azure SRE Agent',
-      description: 'AI-powered site reliability engineering',
+      description:
+        "Azure's Site Reliability Engineering Agent - helped build this from before private preview",
       accentColor: ArcColors.red,
       accomplishments: [
-        { title: 'Agent Chat Interface', completed: true },
-        { title: 'Diagnostic Insights Panel', completed: true },
-        { title: 'Automated Remediation Actions', completed: true },
-        { title: 'Incident Timeline View', completed: true },
+        {
+          title:
+            'All the initial dev goodies - unit tests and results publishing, linting, etc',
+          completed: true,
+        },
+        {
+          title: 'Helped build/maintain multiple parts of chat interface',
+          completed: true,
+        },
+        {
+          title:
+            'UX for connectors, incident metrics, Agent Spaces, subagent skills, etc.',
+          completed: true,
+        },
+        {
+          title:
+            'Built and launched custom portal for Azure SRE Agents and related - hooked up multi-tenant Entra/MSAL auth, ',
+          completed: true,
+        },
+        {
+          title:
+            'Taking learnings to/from project to elevate team and keep up with industry knowledge/tooling/etc',
+          completed: true,
+        },
       ],
     },
   ];
@@ -75,12 +127,7 @@ const CurrentRole = () => {
       <CardContent className="pt-6">
         <div className="flex flex-col gap-4">
           <div className="flex items-center justify-center">
-            <ChevronHeader
-              segments={[
-                { text: 'CURRENT', color: ArcColors.orange },
-                { text: 'ROLE', color: ArcColors.yellow },
-              ]}
-            />
+            <GlowHeader text="CURRENT ROLE" size="lg" />
           </div>
 
           <div className="flex flex-col items-center gap-2">
@@ -101,9 +148,11 @@ const CurrentRole = () => {
           </div>
 
           <div className="mt-4">
-            <h4 className="text-lg font-semibold mb-3 text-center dark:glow-text-cyan">
-              Major projects
-            </h4>
+            <GlowHeader
+              className="text-center mb-3"
+              text="Major projects"
+              size="sm"
+            />
 
             <Accordion type="single" collapsible className="w-full space-y-2">
               {currentProjects.map((project, index) => (
