@@ -1,0 +1,18 @@
+{
+  "$schema": "./node_modules/oxfmt/configuration_schema.json",
+  "trailingComma": "es5",
+  "singleQuote": true,
+  "printWidth": 80,
+  "tabWidth": 2,
+  "useTabs": false,
+  "sortPackageJson": false,
+  "ignorePatterns": [
+    "dist/",
+    "node_modules/",
+    "build/",
+    "*.jpg",
+    "*.png",
+    "*.ico",
+    "package-lock.json"
+  ]
+}

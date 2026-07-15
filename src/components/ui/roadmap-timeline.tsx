@@ -16,7 +16,7 @@ const RoadmapTimeline = ({ items, accentColor }: RoadmapTimelineProps) => {
         aria-hidden="true"
         className="absolute left-[5px] top-2 bottom-2 w-0.5 rounded-full"
         style={{
-          backgroundColor: `${accentColor}`,
+          backgroundColor: accentColor,
         }}
       />
 
