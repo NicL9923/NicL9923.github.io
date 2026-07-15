@@ -3,18 +3,32 @@ import { FaSun, FaMoon } from 'react-icons/fa';
 import { Button } from '../ui/button';
 
 const LightDarkModeToggle = () => {
-  const { theme, setTheme } = useTheme();
+  const { resolvedTheme, setTheme } = useTheme();
 
-  const isLightMode = theme === 'light';
+  const currentTheme =
+    resolvedTheme ??
+    (window.matchMedia('(prefers-color-scheme: dark)').matches
+      ? 'dark'
+      : 'light');
+  const isLightMode = currentTheme === 'light';
+  const nextTheme = isLightMode ? 'dark' : 'light';
 
   const toggleTheme = () => {
-    setTheme(isLightMode ? 'dark' : 'light');
+    setTheme(nextTheme);
   };
 
   return (
-    <Button onClick={toggleTheme} className="mt-2">
-      {isLightMode ? <FaMoon className="mr-2" /> : <FaSun className="mr-2" />}
-      Turn the lights {isLightMode ? 'off' : 'on'}!
+    <Button
+      type="button"
+      variant="outline"
+      size="icon-lg"
+      onClick={toggleTheme}
+      aria-label={`Switch to ${nextTheme} mode`}
+      title={`Switch to ${nextTheme} mode`}
+      className="rounded-full bg-background/80 shadow-sm backdrop-blur-sm"
+    >
+      {isLightMode ? <FaMoon /> : <FaSun />}
+      <span className="sr-only">Switch to {nextTheme} mode</span>
     </Button>
   );
 };

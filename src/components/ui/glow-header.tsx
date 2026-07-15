@@ -1,12 +1,18 @@
-import { ArcColors } from '../../lib/colors';
-
 interface GlowHeaderProps {
   text: string;
   className?: string;
   size?: 'sm' | 'md' | 'lg';
+  as?: 'h1' | 'h2' | 'h3';
+  id?: string;
 }
 
-const GlowHeader = ({ text, className = '', size = 'lg' }: GlowHeaderProps) => {
+const GlowHeader = ({
+  text,
+  className = '',
+  size = 'lg',
+  as: Heading = 'h2',
+  id,
+}: GlowHeaderProps) => {
   const sizeClasses = {
     sm: 'text-lg',
     md: 'text-2xl',
@@ -14,15 +20,12 @@ const GlowHeader = ({ text, className = '', size = 'lg' }: GlowHeaderProps) => {
   };
 
   return (
-    <h1
-      className={`font-bold tracking-wide ${sizeClasses[size]} ${className}`}
-      style={{
-        color: ArcColors.cyan,
-        textShadow: `0 0 10px ${ArcColors.cyan}60, 0 0 20px ${ArcColors.cyan}30`,
-      }}
+    <Heading
+      id={id}
+      className={`glow-heading font-bold tracking-wide ${sizeClasses[size]} ${className}`}
     >
       {text}
-    </h1>
+    </Heading>
   );
 };
 
