@@ -4,10 +4,10 @@ An overview of my career of building things
 
 ## Tech Stack
 
-- **Framework**: React 19 with TypeScript
-- **Build Tool**: Vite
+- **Framework**: React 19 with TypeScript 7
+- **Build Tool**: Vite 8
 - **UI Library**: shadcn/ui + Tailwind CSS
-- **Code Quality**: ESLint, Prettier, Husky
+- **Code Quality**: Oxlint, Oxfmt, Husky
 
 ## Deployment
 
