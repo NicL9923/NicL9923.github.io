@@ -142,6 +142,10 @@
     @apply min-h-screen overflow-x-hidden bg-background text-foreground antialiased;
   }
 
+  html {
+    scroll-behavior: smooth;
+  }
+
   button,
   a {
     @apply focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background;
@@ -150,6 +154,55 @@
 
 .glow-heading {
   color: var(--arc-cyan);
+}
+
+.hero-accent {
+  color: var(--arc-cyan);
+}
+
+.section-kicker {
+  @apply font-mono text-xs font-bold tracking-[0.16em] text-arc-cyan uppercase;
+}
+
+.section-heading {
+  @apply mt-2 text-3xl font-bold tracking-tight text-balance sm:text-4xl;
+}
+
+.case-study {
+  @apply relative overflow-hidden rounded-xl border border-arc-cyan/15 bg-card/80 p-6 pl-7 shadow-sm backdrop-blur-sm sm:p-7 sm:pl-8;
+}
+
+.case-study dt {
+  @apply font-mono text-xs font-bold tracking-[0.12em] text-arc-cyan uppercase;
+}
+
+.case-study dd {
+  @apply mt-1.5 text-sm leading-relaxed text-muted-foreground;
+}
+
+.multiplier-card {
+  @apply rounded-xl border border-arc-cyan/15 bg-card/80 p-6 backdrop-blur-sm;
+}
+
+.multiplier-card > svg {
+  @apply mb-5 size-5 text-arc-cyan;
+}
+
+.multiplier-card h3 {
+  @apply text-lg font-bold;
+}
+
+.multiplier-card p {
+  @apply mt-3 text-sm leading-relaxed text-muted-foreground;
+}
+
+.contact-card {
+  border-color: color-mix(in srgb, var(--arc-cyan) 24%, transparent);
+  background: linear-gradient(
+    120deg,
+    color-mix(in srgb, var(--arc-cyan) 10%, var(--card)),
+    color-mix(in srgb, var(--arc-green) 7%, var(--card))
+  );
 }
 
 .skip-link {

@@ -34,7 +34,37 @@ const App = () => {
           Skip to main content
         </a>
 
-        <header className="mx-auto flex w-full max-w-6xl justify-end px-4 py-4 sm:px-6 lg:px-8">
+        <header className="mx-auto flex w-full max-w-6xl items-center justify-between gap-4 px-4 py-4 sm:px-6 lg:px-8">
+          <a
+            href="#main-content"
+            className="text-sm font-bold tracking-[0.16em] text-foreground"
+            aria-label="Nicolas Layne, home"
+          >
+            NL<span className="text-arc-cyan">.</span>
+          </a>
+          <nav
+            aria-label="Primary navigation"
+            className="ml-auto hidden items-center gap-1 sm:flex"
+          >
+            <a
+              href="#capabilities"
+              className="rounded-md px-3 py-2 text-sm text-muted-foreground transition-colors hover:text-foreground"
+            >
+              Capabilities
+            </a>
+            <a
+              href="#work"
+              className="rounded-md px-3 py-2 text-sm text-muted-foreground transition-colors hover:text-foreground"
+            >
+              Work
+            </a>
+            <a
+              href="#multiplier"
+              className="rounded-md px-3 py-2 text-sm text-muted-foreground transition-colors hover:text-foreground"
+            >
+              Team impact
+            </a>
+          </nav>
           <LightDarkModeToggle />
         </header>
         <AboutMe />
