@@ -3,6 +3,7 @@ import AboutMe from './components/AboutMe';
 import AmbientBackground from './components/AmbientBackground';
 import BootSequence from './components/BootSequence';
 import LightDarkModeToggle from './components/controls/LightDarkModeToggle';
+import MobileNavigation from './components/controls/MobileNavigation';
 
 const BOOT_SESSION_KEY = 'nicolas-layne-portfolio-booted';
 
@@ -34,10 +35,10 @@ const App = () => {
           Skip to main content
         </a>
 
-        <header className="mx-auto flex w-full max-w-6xl items-center justify-between gap-4 px-4 py-4 sm:px-6 lg:px-8">
+        <header className="sticky top-0 z-40 mx-auto flex w-full max-w-6xl items-center justify-between gap-4 border-b border-arc-cyan/15 bg-background/90 px-4 py-4 backdrop-blur-sm sm:static sm:border-b-0 sm:bg-transparent sm:px-6 sm:backdrop-blur-none lg:px-8">
           <a
             href="#main-content"
-            className="text-sm font-bold tracking-[0.16em] text-foreground"
+            className="-m-2 rounded-md p-2 text-sm font-bold tracking-[0.16em] text-foreground"
             aria-label="Nicolas Layne, home"
           >
             NL<span className="text-arc-cyan">.</span>
@@ -65,6 +66,7 @@ const App = () => {
               Team impact
             </a>
           </nav>
+          <MobileNavigation />
           <LightDarkModeToggle />
         </header>
         <AboutMe />

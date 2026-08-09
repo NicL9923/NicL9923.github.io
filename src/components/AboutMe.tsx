@@ -57,29 +57,39 @@ const AboutMe = () => {
                   </p>
                 </div>
 
-                <div className="flex flex-wrap gap-2" aria-label="Core toolkit">
+                <ul className="flex flex-wrap gap-2" aria-label="Core toolkit">
                   {toolkit.map(({ label, icon: Icon }) => (
-                    <Badge
-                      key={label}
-                      variant="secondary"
-                      className="gap-1.5 border border-arc-cyan/20 bg-background/70 px-2.5 py-1 text-xs text-foreground"
-                    >
-                      {Icon ? (
-                        <Icon aria-hidden="true" className="size-3.5" />
-                      ) : null}
-                      {label}
-                    </Badge>
+                    <li key={label}>
+                      <Badge
+                        variant="secondary"
+                        className="gap-1.5 border border-arc-cyan/20 bg-background/70 px-2.5 py-1 text-xs text-foreground"
+                      >
+                        {Icon ? (
+                          <Icon aria-hidden="true" className="size-3.5" />
+                        ) : null}
+                        {label}
+                      </Badge>
+                    </li>
                   ))}
-                </div>
+                </ul>
 
-                <div className="flex flex-wrap gap-3">
-                  <Button asChild size="lg">
+                <div className="flex w-full min-w-0 flex-wrap gap-3 sm:w-auto">
+                  <Button
+                    asChild
+                    size="lg"
+                    className="h-auto min-h-10 w-full whitespace-normal px-4 text-center sm:w-auto sm:px-6"
+                  >
                     <a href="mailto:nicl9923@gmail.com">
                       <FaEnvelope aria-hidden="true" />
                       Have a hard problem? Let&apos;s talk.
                     </a>
                   </Button>
-                  <Button asChild variant="outline" size="lg">
+                  <Button
+                    asChild
+                    variant="outline"
+                    size="lg"
+                    className="min-w-0 flex-1 px-4 sm:flex-none sm:px-6"
+                  >
                     <a
                       href="https://github.com/NicL9923"
                       target="_blank"
@@ -90,7 +100,12 @@ const AboutMe = () => {
                       GitHub
                     </a>
                   </Button>
-                  <Button asChild variant="outline" size="lg">
+                  <Button
+                    asChild
+                    variant="outline"
+                    size="lg"
+                    className="min-w-0 flex-1 px-4 sm:flex-none sm:px-6"
+                  >
                     <a
                       href="https://linkedin.com/in/nicolas-layne/"
                       target="_blank"
