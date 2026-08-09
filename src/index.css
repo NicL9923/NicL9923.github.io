@@ -209,7 +209,7 @@
   position: fixed;
   top: 1rem;
   left: 1rem;
-  z-index: 40;
+  z-index: 50;
   padding: 0.5rem 1rem;
   color: var(--foreground);
   background: var(--background);

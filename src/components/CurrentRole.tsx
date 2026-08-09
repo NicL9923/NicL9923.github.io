@@ -103,7 +103,7 @@ const CurrentRole = () => {
       <section
         id="capabilities"
         aria-labelledby="capabilities-heading"
-        className="scroll-mt-6"
+        className="scroll-mt-24 sm:scroll-mt-6"
       >
         <div className="mb-8 max-w-2xl">
           <p className="section-kicker">How I work</p>
@@ -130,7 +130,11 @@ const CurrentRole = () => {
         </div>
       </section>
 
-      <section id="work" aria-labelledby="work-heading" className="scroll-mt-6">
+      <section
+        id="work"
+        aria-labelledby="work-heading"
+        className="scroll-mt-24 sm:scroll-mt-6"
+      >
         <div className="mb-8 max-w-2xl">
           <p className="section-kicker">Selected work</p>
           <h2 id="work-heading" className="section-heading">
@@ -222,7 +226,7 @@ const CurrentRole = () => {
       <section
         id="multiplier"
         aria-labelledby="multiplier-heading"
-        className="scroll-mt-6"
+        className="scroll-mt-24 sm:scroll-mt-6"
       >
         <div className="mb-8 max-w-3xl">
           <p className="section-kicker">Team multiplier</p>
@@ -271,7 +275,7 @@ const CurrentRole = () => {
       <section
         id="contact"
         aria-labelledby="contact-heading"
-        className="scroll-mt-6"
+        className="scroll-mt-24 sm:scroll-mt-6"
       >
         <Card className="contact-card gap-0 overflow-hidden py-0">
           <div className="h-0.5 rainbow-border" />
