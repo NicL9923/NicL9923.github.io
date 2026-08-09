@@ -12,25 +12,21 @@ const shouldShowBootSequence = () =>
   !window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
 const App = () => {
-  const [isBooting, setIsBooting] = useState(shouldShowBootSequence);
+  const [showBootSequence, setShowBootSequence] = useState(
+    shouldShowBootSequence
+  );
 
   const handleBootComplete = useCallback(() => {
     sessionStorage.setItem(BOOT_SESSION_KEY, 'true');
-    setIsBooting(false);
+    setShowBootSequence(false);
   }, []);
 
   return (
     <>
-      {isBooting && <BootSequence onComplete={handleBootComplete} />}
+      {showBootSequence && <BootSequence onComplete={handleBootComplete} />}
 
       <AmbientBackground />
-      <div
-        aria-hidden={isBooting || undefined}
-        inert={isBooting}
-        className={`relative z-10 min-h-screen transition-opacity duration-300 ${
-          isBooting ? 'opacity-0' : 'opacity-100'
-        }`}
-      >
+      <div className="relative z-10 min-h-screen">
         <a href="#main-content" className="skip-link">
           Skip to main content
         </a>

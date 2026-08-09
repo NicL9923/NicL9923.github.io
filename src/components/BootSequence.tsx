@@ -7,15 +7,11 @@ interface BootSequenceProps {
 }
 
 const bootMessages = [
-  { text: 'Initializing system...', delay: 0 },
-  { text: 'Loading core modules...', delay: 120 },
-  { text: 'Establishing secure connection...', delay: 240 },
-  { text: 'Decrypting profile data...', delay: 400 },
-  { text: 'Rendering interface...', delay: 580 },
-  { text: 'CONNECTION ESTABLISHED', delay: 740, isSuccess: true },
+  { text: 'Loading profile...', delay: 0 },
+  { text: 'PORTFOLIO ONLINE', delay: 320, isSuccess: true },
 ];
 
-const BootSequence = ({ onComplete, duration = 900 }: BootSequenceProps) => {
+const BootSequence = ({ onComplete, duration = 600 }: BootSequenceProps) => {
   const [visibleMessages, setVisibleMessages] = useState<number>(0);
   const [isExiting, setIsExiting] = useState(false);
 
@@ -34,104 +30,68 @@ const BootSequence = ({ onComplete, duration = 900 }: BootSequenceProps) => {
 
     timers.push(window.setTimeout(onComplete, duration + 200));
 
-    const handleKeyDown = (event: KeyboardEvent) => {
-      if (event.key === 'Escape') {
-        onComplete();
-      }
-    };
-
-    window.addEventListener('keydown', handleKeyDown);
-
     return () => {
       timers.forEach(window.clearTimeout);
-      window.removeEventListener('keydown', handleKeyDown);
     };
   }, [duration, onComplete]);
 
   return (
     <div
-      role="dialog"
-      aria-modal="true"
-      aria-labelledby="boot-sequence-title"
-      className={`fixed inset-0 z-50 flex items-center justify-center bg-[#0D1117] transition-opacity duration-200 ${
-        isExiting ? 'opacity-0' : 'opacity-100'
+      aria-hidden="true"
+      className={`pointer-events-none fixed right-4 bottom-4 z-30 w-[calc(100%-2rem)] max-w-xs transition-all duration-200 motion-reduce:hidden sm:right-6 sm:bottom-6 ${
+        isExiting ? 'translate-y-2 opacity-0' : 'translate-y-0 opacity-100'
       }`}
     >
-      <h2 id="boot-sequence-title" className="sr-only">
-        Loading Nicolas Layne&apos;s portfolio
-      </h2>
-
       <div
-        className="pointer-events-none absolute inset-0 overflow-hidden"
-        aria-hidden="true"
+        className="relative overflow-hidden rounded-lg border shadow-2xl backdrop-blur-md"
+        style={{
+          backgroundColor: '#0D1117E8',
+          borderColor: `${ArcColors.cyan}40`,
+          boxShadow: `0 12px 40px #00000050, 0 0 24px ${ArcColors.cyan}18`,
+        }}
       >
         <div
-          className="absolute w-full h-[2px] animate-scan"
+          className="absolute inset-x-0 top-0 h-px"
           style={{
             background: `linear-gradient(90deg, transparent, ${ArcColors.cyan}40, transparent)`,
-            boxShadow: `0 0 20px ${ArcColors.cyan}60`,
           }}
         />
-      </div>
-
-      <div
-        className="pointer-events-none absolute inset-0 opacity-10"
-        aria-hidden="true"
-        style={{
-          backgroundImage: `
-            linear-gradient(${ArcColors.cyan}20 1px, transparent 1px),
-            linear-gradient(90deg, ${ArcColors.cyan}20 1px, transparent 1px)
-          `,
-          backgroundSize: '50px 50px',
-        }}
-      />
-
-      <div className="relative w-full max-w-lg mx-4">
         <div
-          className="flex items-center gap-2 px-4 py-2 rounded-t-lg"
+          className="flex items-center gap-2 px-3 py-2"
           style={{ backgroundColor: `${ArcColors.darkBlue}80` }}
         >
           <div className="flex gap-1.5" aria-hidden="true">
             <div
-              className="w-3 h-3 rounded-full"
+              className="size-2 rounded-full"
               style={{ backgroundColor: ArcColors.red }}
             />
             <div
-              className="w-3 h-3 rounded-full"
+              className="size-2 rounded-full"
               style={{ backgroundColor: ArcColors.yellow }}
             />
             <div
-              className="w-3 h-3 rounded-full"
+              className="size-2 rounded-full"
               style={{ backgroundColor: ArcColors.green }}
             />
           </div>
           <span
-            className="ml-2 text-xs font-mono opacity-60"
+            className="ml-1 font-mono text-[0.65rem] opacity-60"
             style={{ color: ArcColors.cyan }}
           >
             terminal@nicolas-layne
           </span>
-          <button
-            type="button"
-            onClick={onComplete}
-            className="ml-auto rounded px-2 py-1 text-xs font-medium text-white/75 transition-colors hover:bg-white/10 hover:text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-arc-cyan"
-          >
-            Skip intro
-          </button>
         </div>
 
         <div
-          aria-hidden="true"
-          className="p-4 rounded-b-lg font-mono text-sm border border-t-0"
+          className="min-h-17 border-t px-3 py-2.5 font-mono text-xs"
           style={{
-            backgroundColor: '#0D1117',
             borderColor: `${ArcColors.cyan}30`,
           }}
         >
           {bootMessages.slice(0, visibleMessages).map((msg, index) => (
             <div
               key={msg.text}
-              className="flex items-center gap-2 mb-2 animate-in fade-in slide-in-from-left-2 duration-300"
+              className="mb-1.5 flex items-center gap-2 animate-in fade-in slide-in-from-left-2 duration-200"
             >
               <span style={{ color: ArcColors.cyan }}>{'>'}</span>
               <span
@@ -156,9 +116,9 @@ const BootSequence = ({ onComplete, duration = 900 }: BootSequenceProps) => {
             </div>
           ))}
 
-          <div className="mt-4 h-1 rounded-full overflow-hidden bg-white/10">
+          <div className="mt-2 h-0.5 overflow-hidden rounded-full bg-white/10">
             <div
-              className="h-full rounded-full transition-all duration-300 ease-out"
+              className="h-full rounded-full transition-all duration-200 ease-out"
               style={{
                 width: `${(visibleMessages / bootMessages.length) * 100}%`,
                 background: `linear-gradient(90deg, ${ArcColors.cyan}, ${ArcColors.green})`,
@@ -168,27 +128,6 @@ const BootSequence = ({ onComplete, duration = 900 }: BootSequenceProps) => {
           </div>
         </div>
       </div>
-
-      <div
-        aria-hidden="true"
-        className="pointer-events-none absolute top-4 left-4 w-16 h-16 border-l-2 border-t-2"
-        style={{ borderColor: `${ArcColors.cyan}40` }}
-      />
-      <div
-        aria-hidden="true"
-        className="pointer-events-none absolute top-4 right-4 w-16 h-16 border-r-2 border-t-2"
-        style={{ borderColor: `${ArcColors.cyan}40` }}
-      />
-      <div
-        aria-hidden="true"
-        className="pointer-events-none absolute bottom-4 left-4 w-16 h-16 border-l-2 border-b-2"
-        style={{ borderColor: `${ArcColors.cyan}40` }}
-      />
-      <div
-        aria-hidden="true"
-        className="pointer-events-none absolute bottom-4 right-4 w-16 h-16 border-r-2 border-b-2"
-        style={{ borderColor: `${ArcColors.cyan}40` }}
-      />
     </div>
   );
 };
