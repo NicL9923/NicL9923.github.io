@@ -13,6 +13,7 @@
 /dist
 
 # misc
+.playwright-cli
 .DS_Store
 .env.local
 .env.development.local
