@@ -1,0 +1,160 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Nicolas Layne social preview</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+
+      html,
+      body {
+        width: 1200px;
+        height: 630px;
+        overflow: hidden;
+        font-family: Inter, ui-sans-serif, system-ui, sans-serif;
+      }
+
+      body {
+        background: #0d1117;
+        color: #f0f4f8;
+      }
+
+      .stage {
+        position: relative;
+        width: 1200px;
+        height: 630px;
+        background:
+          radial-gradient(
+            circle at 15% 10%,
+            rgba(0, 180, 216, 0.14),
+            transparent 30rem
+          ),
+          radial-gradient(
+            circle at 85% 35%,
+            rgba(42, 157, 143, 0.11),
+            transparent 32rem
+          ),
+          radial-gradient(
+            circle at 50% 90%,
+            rgba(0, 119, 182, 0.09),
+            transparent 28rem
+          ),
+          #0d1117;
+      }
+
+      .stage::after {
+        content: '';
+        position: absolute;
+        inset: 0;
+        opacity: 0.16;
+        background-image:
+          linear-gradient(rgba(0, 180, 216, 0.2) 1px, transparent 1px),
+          linear-gradient(90deg, rgba(0, 180, 216, 0.2) 1px, transparent 1px);
+        background-size: 56px 56px;
+        mask-image: linear-gradient(to bottom, black, transparent 72%);
+      }
+
+      .card {
+        position: absolute;
+        inset: 56px 64px;
+        display: flex;
+        flex-direction: column;
+        background: #161b22;
+        border: 1px solid rgba(0, 180, 216, 0.22);
+        border-radius: 24px;
+        overflow: hidden;
+        box-shadow: 0 24px 64px rgba(0, 0, 0, 0.35);
+      }
+
+      .rainbow {
+        height: 6px;
+        background: linear-gradient(
+          90deg,
+          #e63946,
+          #f4a261,
+          #e9c46a,
+          #2a9d8f,
+          #00b4d8,
+          #0077b6
+        );
+      }
+
+      .content {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        padding: 48px 56px 44px;
+      }
+
+      .kicker {
+        font-size: 18px;
+        font-weight: 600;
+        letter-spacing: 0.18em;
+        text-transform: uppercase;
+        color: #29c0df;
+      }
+
+      h1 {
+        margin-top: 28px;
+        font-size: 58px;
+        font-weight: 700;
+        line-height: 1.12;
+        letter-spacing: -0.03em;
+      }
+
+      .footer {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin-top: auto;
+        padding-top: 28px;
+      }
+
+      .subtitle {
+        font-size: 24px;
+        font-weight: 500;
+        color: #8b9cb3;
+      }
+
+      .badge {
+        display: grid;
+        place-items: center;
+        width: 56px;
+        height: 56px;
+        border: 2px solid #29c0df;
+        border-radius: 50%;
+        color: #29c0df;
+        font-size: 18px;
+        font-weight: 700;
+        letter-spacing: 0.04em;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="stage">
+      <div class="card">
+        <div class="rainbow"></div>
+        <div class="content">
+          <p class="kicker">Nicolas Layne</p>
+          <h1>Front-end depth.<br />End-to-end execution.</h1>
+          <div class="footer">
+            <p class="subtitle">
+              Senior Software Engineer · Front End · Cloud · AI
+            </p>
+            <div class="badge" aria-hidden="true">NL</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

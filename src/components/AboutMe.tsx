@@ -123,7 +123,7 @@ const AboutMe = () => {
                     aria-hidden="true"
                     className="text-[#0078A3] dark:text-[#00BCF2]"
                   />
-                  Software Engineer II at Microsoft
+                  Senior Software Engineer at Microsoft
                 </p>
               </div>
 
