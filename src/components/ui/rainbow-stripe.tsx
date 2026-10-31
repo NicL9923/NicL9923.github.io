@@ -52,7 +52,6 @@ const DiagonalStripes = ({ className = '' }: { className?: string }) => {
             <stop offset="100%" stopColor={ArcColors.blue} />
           </linearGradient>
         </defs>
-        {/* Multiple diagonal lines */}
         <line
           x1="0"
           y1="20"
