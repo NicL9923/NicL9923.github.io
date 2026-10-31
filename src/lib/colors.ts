@@ -9,7 +9,6 @@ export const ArcColors = {
   darkBlue: '#023E8A',
 } as const;
 
-// Array version for iteration (e.g., rainbow stripes)
 export const ArcColorArray = [
   ArcColors.red,
   ArcColors.orange,
