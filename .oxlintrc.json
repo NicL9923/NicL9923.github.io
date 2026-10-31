@@ -10,7 +10,6 @@
     "react/exhaustive-deps": "error",
     "react/react-in-jsx-scope": "off",
     "react/only-export-components": ["error", { "allowConstantExport": true }],
-    "react/react-compiler": "error",
     "react/rules-of-hooks": "error",
     "jsx-a11y/alt-text": "error",
     "jsx-a11y/anchor-has-content": "error",
