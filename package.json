@@ -9,7 +9,8 @@
   },
   "scripts": {
     "dev": "vite",
-    "build": "node node_modules/typescript/bin/tsc && vite build",
+    "build": "node node_modules/typescript/bin/tsc -p tsconfig.app.json && node node_modules/typescript/bin/tsc -p tsconfig.node.json && vite build && vite build --ssr src/entry-server.tsx --outDir dist-ssr && node scripts/prerender.ts",
+    "test": "npm run build && playwright test",
     "preview": "vite preview",
     "lint": "oxlint . --type-aware --type-check --deny-warnings --report-unused-disable-directives",
     "lint:fix": "oxlint . --type-aware --type-check --fix --deny-warnings --report-unused-disable-directives",
@@ -28,6 +29,8 @@
     "tailwind-merge": "^3.7.0"
   },
   "devDependencies": {
+    "@axe-core/playwright": "4.14.0",
+    "@playwright/test": "1.65.1",
     "@tailwindcss/vite": "4.3.3",
     "@types/node": "24.19.2",
     "@types/react": "19.3.0",

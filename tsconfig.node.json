@@ -1,0 +1,11 @@
+{
+  // Build scripts and tests run in Node, so they get Node types. The browser
+  // code in src stays without them so `process` and friends fail to compile.
+  "extends": "./tsconfig.app.json",
+  "compilerOptions": {
+    "types": ["node"],
+    "lib": ["ES2022", "DOM", "DOM.Iterable"],
+    "target": "ES2022"
+  },
+  "include": ["scripts", "tests", "playwright.config.ts"]
+}

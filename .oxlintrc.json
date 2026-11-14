@@ -48,5 +48,5 @@
     "browser": true,
     "builtin": true
   },
-  "ignorePatterns": ["dist"]
+  "ignorePatterns": ["dist", "dist-ssr", "test-results", "playwright-report"]
 }

@@ -8,6 +8,9 @@
   "sortPackageJson": false,
   "ignorePatterns": [
     "dist/",
+    "dist-ssr/",
+    "test-results/",
+    "playwright-report/",
     "node_modules/",
     "build/",
     "*.jpg",
