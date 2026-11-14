@@ -8,6 +8,12 @@ export interface ContrastFailure {
 
 type Rgb = [number, number, number];
 
+interface TextColor {
+  rgb: Rgb;
+  // Text alpha times the opacity of the element and every ancestor.
+  alpha: number;
+}
+
 /**
  * axe cannot judge text over gradients, translucent layers, or images and
  * reports those nodes as "incomplete". This measures them from pixels: read
@@ -34,9 +40,13 @@ export async function measureContrast(
           if (!context) throw new Error('No 2D canvas context');
           context.fillStyle = style.color;
           context.fillRect(0, 0, 1, 1);
-          const [r, g, b] = context.getImageData(0, 0, 1, 1).data;
+          const [r, g, b, a] = context.getImageData(0, 0, 1, 1).data;
+          let alpha = a / 255;
+          for (let el: Element | null = node; el; el = el.parentElement) {
+            alpha *= Number(getComputedStyle(el).opacity);
+          }
           return {
-            foreground: [r, g, b] as Rgb,
+            foreground: { rgb: [r, g, b] as Rgb, alpha },
             fontSize: parseFloat(style.fontSize),
             fontWeight: Number(style.fontWeight),
           };
@@ -115,7 +125,7 @@ export async function measureContrast(
   return failures;
 }
 
-const worstContrast = (page: Page, image: Buffer, foreground: Rgb) =>
+const worstContrast = (page: Page, image: Buffer, foreground: TextColor) =>
   page.evaluate(
     async ({ base64, fgColor }) => {
       const img = new Image();
@@ -137,11 +147,19 @@ const worstContrast = (page: Page, image: Buffer, foreground: Rgb) =>
         });
         return 0.2126 * lr + 0.7152 * lg + 0.0722 * lb;
       };
-      const fg = luminance(...fgColor);
+      // Translucent text blends with whatever is behind it, per pixel.
+      const [fr, fgG, fb] = fgColor.rgb;
+      const a = fgColor.alpha;
 
       let worst = Infinity;
       for (let i = 0; i < data.length; i += 4) {
-        const bg = luminance(data[i], data[i + 1], data[i + 2]);
+        const [br, bgG, bb] = [data[i], data[i + 1], data[i + 2]];
+        const bg = luminance(br, bgG, bb);
+        const fg = luminance(
+          a * fr + (1 - a) * br,
+          a * fgG + (1 - a) * bgG,
+          a * fb + (1 - a) * bb
+        );
         worst = Math.min(
           worst,
           (Math.max(fg, bg) + 0.05) / (Math.min(fg, bg) + 0.05)
