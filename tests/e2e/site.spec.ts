@@ -102,10 +102,12 @@ test.describe('theme', () => {
     await page.emulateMedia({ colorScheme: 'light' });
     await page.goto('/');
 
-    await page.getByRole('button', { name: 'Switch to dark mode' }).click();
+    await page
+      .getByRole('button', { name: 'Switch to dark mode', exact: true })
+      .click();
     await expect(page.locator('html')).toHaveClass(/\bdark\b/);
     await expect(
-      page.getByRole('button', { name: 'Switch to light mode' })
+      page.getByRole('button', { name: 'Switch to light mode', exact: true })
     ).toBeVisible();
     await expect
       .poll(async () => (await readTheme(page)).meta)
@@ -124,7 +126,9 @@ test('hydrates without errors', async ({ page }) => {
   await page.waitForLoadState('networkidle');
   // A working theme toggle proves React attached to the prerendered markup.
   await page.getByRole('heading', { level: 1 }).waitFor();
-  await page.getByRole('button', { name: 'Switch to dark mode' }).click();
+  await page
+    .getByRole('button', { name: 'Switch to dark mode', exact: true })
+    .click();
   await expect(page.locator('html')).toHaveClass(/\bdark\b/);
   expect(errors).toEqual([]);
 });
@@ -143,7 +147,9 @@ test('still works when the browser blocks storage', async ({ page }) => {
   await page.emulateMedia({ colorScheme: 'light' });
   await page.goto('/');
 
-  await page.getByRole('button', { name: 'Switch to dark mode' }).click();
+  await page
+    .getByRole('button', { name: 'Switch to dark mode', exact: true })
+    .click();
   await expect(page.locator('html')).toHaveClass(/\bdark\b/);
   expect(errors).toEqual([]);
 });
