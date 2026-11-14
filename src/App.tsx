@@ -1,29 +1,67 @@
-import { useCallback, useState } from 'react';
-import AboutMe from './components/AboutMe';
+import { useCallback, useState, useSyncExternalStore } from 'react';
 import AmbientBackground from './components/AmbientBackground';
 import BootSequence from './components/BootSequence';
-import LightDarkModeToggle from './components/controls/LightDarkModeToggle';
-import MobileNavigation from './components/controls/MobileNavigation';
+import ThemeColorMeta from './components/controls/ThemeColorMeta';
+import Capabilities from './components/sections/Capabilities';
+import Contact from './components/sections/Contact';
+import Hero from './components/sections/Hero';
+import SelectedWork from './components/sections/SelectedWork';
+import TeamImpact from './components/sections/TeamImpact';
+import SiteFooter from './components/SiteFooter';
+import SiteHeader from './components/SiteHeader';
 
 const BOOT_SESSION_KEY = 'nicolas-layne-portfolio-booted';
 
-const shouldShowBootSequence = () =>
-  sessionStorage.getItem(BOOT_SESSION_KEY) !== 'true' &&
+// Storage can throw when the browser blocks site data. The boot toast is
+// decorative, so skip it whenever we cannot remember that it already played.
+const hasBootedThisSession = () => {
+  try {
+    return sessionStorage.getItem(BOOT_SESSION_KEY) === 'true';
+  } catch {
+    return true;
+  }
+};
+
+const rememberBoot = () => {
+  try {
+    sessionStorage.setItem(BOOT_SESSION_KEY, 'true');
+  } catch {
+    // Nothing to remember it in; the toast simply plays again next load.
+  }
+};
+
+// Decided once per page load in the browser. The prerender has no window.
+const bootOnThisLoad =
+  typeof window !== 'undefined' &&
+  !hasBootedThisSession() &&
   !window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
-const App = () => {
-  const [showBootSequence, setShowBootSequence] = useState(
-    shouldShowBootSequence
+const noopSubscribe = () => () => {};
+
+// False during the prerender and hydration, true afterward, so client-only
+// UI never makes the hydrated markup differ from the static HTML.
+const useIsHydrated = () =>
+  useSyncExternalStore(
+    noopSubscribe,
+    () => true,
+    () => false
   );
 
+const App = () => {
+  const isHydrated = useIsHydrated();
+  const [bootDone, setBootDone] = useState(false);
+
   const handleBootComplete = useCallback(() => {
-    sessionStorage.setItem(BOOT_SESSION_KEY, 'true');
-    setShowBootSequence(false);
+    rememberBoot();
+    setBootDone(true);
   }, []);
 
   return (
     <>
-      {showBootSequence && <BootSequence onComplete={handleBootComplete} />}
+      {isHydrated && bootOnThisLoad && !bootDone ? (
+        <BootSequence onComplete={handleBootComplete} />
+      ) : null}
+      <ThemeColorMeta />
 
       <AmbientBackground />
       <div className="relative z-10 min-h-screen">
@@ -31,41 +69,20 @@ const App = () => {
           Skip to main content
         </a>
 
-        <header className="sticky top-0 z-40 mx-auto flex w-full max-w-6xl items-center justify-between gap-4 border-b border-arc-cyan/15 bg-background/90 px-4 py-4 backdrop-blur-sm sm:static sm:border-b-0 sm:bg-transparent sm:px-6 sm:backdrop-blur-none lg:px-8">
-          <a
-            href="#main-content"
-            className="-m-2 rounded-md p-2 text-sm font-bold tracking-[0.16em] text-foreground"
-            aria-label="Nicolas Layne, home"
-          >
-            NL<span className="text-arc-cyan">.</span>
-          </a>
-          <nav
-            aria-label="Primary navigation"
-            className="ml-auto hidden items-center gap-1 sm:flex"
-          >
-            <a
-              href="#capabilities"
-              className="rounded-md px-3 py-2 text-sm text-muted-foreground transition-colors hover:text-foreground"
-            >
-              Capabilities
-            </a>
-            <a
-              href="#work"
-              className="rounded-md px-3 py-2 text-sm text-muted-foreground transition-colors hover:text-foreground"
-            >
-              Work
-            </a>
-            <a
-              href="#multiplier"
-              className="rounded-md px-3 py-2 text-sm text-muted-foreground transition-colors hover:text-foreground"
-            >
-              Team impact
-            </a>
-          </nav>
-          <MobileNavigation />
-          <LightDarkModeToggle />
-        </header>
-        <AboutMe />
+        <SiteHeader />
+        <main
+          id="main-content"
+          className="mx-auto w-full max-w-6xl px-4 pb-16 sm:px-6 sm:pb-20 lg:px-8"
+        >
+          <div className="flex flex-col gap-16 animate-in fade-in duration-500 sm:gap-20">
+            <Hero />
+            <Capabilities />
+            <SelectedWork />
+            <TeamImpact />
+            <Contact />
+          </div>
+        </main>
+        <SiteFooter />
       </div>
     </>
   );

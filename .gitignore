@@ -11,6 +11,11 @@
 # production
 /build
 /dist
+/dist-ssr
+
+# Playwright
+/test-results
+/playwright-report
 
 # misc
 .playwright-cli

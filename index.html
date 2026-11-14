@@ -4,7 +4,30 @@
     <meta charset="utf-8" />
     <link rel="icon" href="/favicon.ico" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="theme-color" content="#0d1117" />
+    <meta name="theme-color" content="#ffffff" />
+    <script>
+      // Apply the saved or system theme before first paint. Matches
+      // next-themes (storage key "theme", class on <html>) in src/Root.tsx and
+      // the colors in src/components/controls/ThemeColorMeta.tsx.
+      (() => {
+        let saved = null;
+        try {
+          saved = localStorage.getItem('theme');
+        } catch {
+          // Storage blocked; fall back to the system preference.
+        }
+        const dark =
+          saved === 'dark' ||
+          (saved !== 'light' &&
+            matchMedia('(prefers-color-scheme: dark)').matches);
+        const theme = dark ? 'dark' : 'light';
+        document.documentElement.classList.add(theme);
+        document.documentElement.style.colorScheme = theme;
+        document
+          .querySelector('meta[name="theme-color"]')
+          .setAttribute('content', dark ? '#0d1117' : '#ffffff');
+      })();
+    </script>
     <meta
       name="description"
       content="Nicolas Layne is a senior software engineer with deep front-end expertise, building end-to-end cloud products, AI orchestration systems, and developer tooling."
@@ -17,7 +40,7 @@
     <meta property="og:site_name" content="Nicolas Layne" />
     <meta
       property="og:title"
-      content="Nicolas Layne | Senior Software Engineer — Front End, Cloud & AI"
+      content="Nicolas Layne | Senior Software Engineer | Front End, Cloud & AI"
     />
     <meta
       property="og:description"
@@ -32,7 +55,7 @@
     <meta property="og:image:height" content="630" />
     <meta
       property="og:image:alt"
-      content="Nicolas Layne — Software engineer with front-end depth and end-to-end execution"
+      content="Nicolas Layne, software engineer with front-end depth and end-to-end execution"
     />
     <meta property="profile:first_name" content="Nicolas" />
     <meta property="profile:last_name" content="Layne" />
@@ -40,7 +63,7 @@
     <meta name="twitter:card" content="summary_large_image" />
     <meta
       name="twitter:title"
-      content="Nicolas Layne | Senior Software Engineer — Front End, Cloud & AI"
+      content="Nicolas Layne | Senior Software Engineer | Front End, Cloud & AI"
     />
     <meta
       name="twitter:description"
@@ -52,7 +75,7 @@
     />
     <meta
       name="twitter:image:alt"
-      content="Nicolas Layne — Software engineer with front-end depth and end-to-end execution"
+      content="Nicolas Layne, software engineer with front-end depth and end-to-end execution"
     />
 
     <script type="application/ld+json">
@@ -82,12 +105,11 @@
     </script>
 
     <title>
-      Nicolas Layne | Senior Software Engineer — Front End, Cloud & AI
+      Nicolas Layne | Senior Software Engineer | Front End, Cloud & AI
     </title>
   </head>
   <body>
-    <noscript>You need to enable JavaScript to run this app.</noscript>
-    <div id="root"></div>
+    <div id="root"><!--app-html--></div>
     <script type="module" src="/src/index.tsx"></script>
   </body>
 </html>
