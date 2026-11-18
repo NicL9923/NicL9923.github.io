@@ -11,7 +11,7 @@ An overview of my career of building things
 
 ## Development
 
-Use Node.js 24.22.2 or later in the 24 line, or 26.13.0 or later in the 26 line. Run `npm ci`, then `npm run lint` and `npm test`. Oxlint provides type-aware checks and the React Compiler correctness rules.
+Use Node.js 24.22.2 or later in the 24 line, or 26.13.0 or later in the 26 line. Run `npm ci`, then `npm run lint` and `npm test`. Oxlint provides type-aware checks, powered by the tsrs type checker, and the React Compiler correctness rules.
 
 `npm run build` type-checks with the TypeScript 7 compiler, builds the client, then prerenders the page into `dist/index.html` with `scripts/prerender.ts`. Crawlers, link previews, and visitors without JavaScript get the full content, and the browser hydrates it. `npm run dev` skips the prerender and renders on the client.
 
